@@ -3,7 +3,12 @@ guid: f6e2f912a40f13440bee012384b9ca14
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Microbus1BaseTexture
+    second: {fileID: 2100000, guid: 57b572e9b0cee4840ab1948e87b5e8ce, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
