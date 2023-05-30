@@ -118,6 +118,12 @@ namespace PaintIn3D
 				return hitCache;
 			}
 		}
+		
+		
+		public void Start()
+		{
+			Debug.Log("Start");
+		}
 
 		/// <summary>This component sends hit events to a cached list of components that can receive them. If this list changes then you must manually call this method.</summary>
 		[ContextMenu("Clear Hit Cache")]

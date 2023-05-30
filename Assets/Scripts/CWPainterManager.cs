@@ -58,14 +58,16 @@ public class CWPainterManager : MonoBehaviour
         isGlassFinished = false;
         isFabricFinished = false;
         isCarFinished = false;
-        
+        NewCar();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (!newCar && waterCounter.Count==0)
+      Debug.Log(glassCounterAlpha.RatioA);
+        
+        
+     /*   if (!newCar && waterCounter.Count==0)
         {
             newCar = false;
             
@@ -79,6 +81,10 @@ public class CWPainterManager : MonoBehaviour
         {
             CheckCounters();
         }
+       */
+     
+     
+     CheckCounters();
        
     }
 
@@ -104,7 +110,7 @@ public class CWPainterManager : MonoBehaviour
         glassMaskTexture = carManager.glassMaskTexture;
 
        
-        mainPaintableTexture[0].LocalMaskTexture = mainTexture;
+        mainPaintableTexture[0].LocalMaskTexture = null;
 
 
 
@@ -146,7 +152,11 @@ public class CWPainterManager : MonoBehaviour
         waterParticles.enabled = false;
         fabricPainter.enabled = false; 
         squeegee.enabled = false;
-        mainPaintableTexture[0].LocalMaskTexture = mainTexture;
+        squeegeeSphere.enabled = false;
+        fabricPainterSphere.enabled = false;
+        foamParticlesSphere.enabled = true;
+        waterParticlesSphere.enabled = false;
+        mainPaintableTexture[0].LocalMaskTexture = null;
     }
 
     public void OnFoamFinish()
@@ -158,12 +168,17 @@ public class CWPainterManager : MonoBehaviour
     
     public void WaterActive()
     {
-        mainPaintableTexture[0].LocalMaskTexture = mainTexture;
-        foamParticles.enabled = false; 
+        mainPaintableTexture[0].LocalMaskTexture = null;
+        //foamParticles.enabled = false; 
         waterParticles.enabled = true;
         fabricPainter.enabled = false; 
         squeegee.enabled = false;
         
+        foamParticlesSphere.enabled = true;
+        waterParticlesSphere.enabled = true;
+        squeegeeSphere.enabled = false;
+        fabricPainterSphere.enabled = false;
+       
 
     }
     
@@ -178,10 +193,15 @@ public class CWPainterManager : MonoBehaviour
     {
         
         mainPaintableTexture[0].LocalMaskTexture = glassMaskTexture;
-        foamParticles.enabled = false; 
-        waterParticles.enabled = false;
+        //foamParticles.enabled = false; 
+        //waterParticles.enabled = false;
         squeegee.enabled = true;
         fabricPainter.enabled = false;
+        
+        foamParticlesSphere.enabled = true;
+        waterParticlesSphere.enabled = true;
+        squeegeeSphere.enabled = true;
+        fabricPainterSphere.enabled = false;
     }
     
     public void OnGlassFinish()
@@ -193,11 +213,17 @@ public class CWPainterManager : MonoBehaviour
    
     public void FabricActive()
     {
-        mainPaintableTexture[0].LocalMaskTexture = mainTexture;
-        foamParticles.enabled = false; 
-        waterParticles.enabled = false;
-        squeegee.enabled = false;
+        mainPaintableTexture[0].LocalMaskTexture = null;
+       //foamParticles.enabled = false; 
+        //waterParticles.enabled = false;
+        //squeegee.enabled = false;
         fabricPainter.enabled = true;
+        
+         
+        foamParticlesSphere.enabled = true;
+        waterParticlesSphere.enabled = true;
+        squeegeeSphere.enabled = true;
+        fabricPainterSphere.enabled = true;
         
 
     }
@@ -207,12 +233,12 @@ public class CWPainterManager : MonoBehaviour
     {
         
         mainPaintableTexture[0].LocalMaskTexture = mainTexture;
-        foamParticles.enabled = false; 
-        waterParticles.enabled = false;
-        squeegee.enabled = false;
-        fabricPainter.enabled = false;
+       // foamParticles.enabled = false; 
+        //waterParticles.enabled = false;
+        //squeegee.enabled = false;
+       // fabricPainter.enabled = false;
 
-        isFabricFinished = true;
+       // isFabricFinished = true;
 
     }
     
@@ -228,24 +254,24 @@ public class CWPainterManager : MonoBehaviour
     
     void CheckCounters()
     {
-        if (foamCounter.Ratio >0.99f && !isFoamFinished)
+        if (foamCounter.Total>0 && 1-foamCounter.Ratio >0.70f && !isFoamFinished)
         {  
-            Debug.Log("Foam Finished");
+            Debug.Log("Foam Finished" + foamCounter.Ratio);
             OnFoamFinish();
         }
         
-        if (waterCounter.Ratio >0.99f&& !isWaterFinished && isFoamFinished)
+        if (waterCounter.Total>0 && 1-waterCounter.Ratio >0.70f&& !isWaterFinished && isFoamFinished)
         {
-            Debug.Log(" Water Finished");
+            Debug.Log("Water Finished" + waterCounter.Ratio);
             OnWaterFinish();
         }
         
-        if (glassCounter.Count >0.99f && !isGlassFinished && isWaterFinished && isFoamFinished)
+        if (glassCounter.Total > 0 && 1-glassCounterAlpha.RatioA >0.60f && !isGlassFinished && isWaterFinished && isFoamFinished)
         {   Debug.Log(" Glass Finished");
             OnGlassFinish();
         }
         
-        if (fabricCounter.Count >0.99f && !isFabricFinished && isGlassFinished && isWaterFinished && isFoamFinished)
+        if (fabricCounter.Total >0 && 1-fabricCounterAlpha.RatioA>0.60f && !isFabricFinished && isGlassFinished && isWaterFinished && isFoamFinished)
         {
             Debug.Log(" Fabric Finished");
             OnFabricFinish();

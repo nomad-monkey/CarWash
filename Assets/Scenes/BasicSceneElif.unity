@@ -410,7 +410,7 @@ MonoBehaviour:
   paintableTexture: {fileID: 8961403474103463775}
   interval: 0
   async: 1
-  downsampleSteps: 9
+  downsampleSteps: 10
   registeredPaintableTexture: {fileID: 0}
   cooldown: -13384.683
   currentReader:
@@ -464,9 +464,9 @@ MonoBehaviour:
   paintableTexture: {fileID: 4154776878337780446}
   interval: 0
   async: 1
-  downsampleSteps: 9
+  downsampleSteps: 2
   registeredPaintableTexture: {fileID: 4154776878337780446}
-  cooldown: -1489.807
+  cooldown: -3580.7603
   currentReader:
     dirty: 1
     requested: 0
@@ -547,9 +547,9 @@ MonoBehaviour:
   paintableTexture: {fileID: 4154776878337780446}
   interval: 0
   async: 1
-  downsampleSteps: 10
+  downsampleSteps: 2
   registeredPaintableTexture: {fileID: 4154776878337780446}
-  cooldown: -14228.157
+  cooldown: -16314.58
   currentReader:
     dirty: 0
     requested: 0
@@ -573,7 +573,7 @@ MonoBehaviour:
     downsampleSteps: 0
     downsampleBoost: 0
     tempTexture: {fileID: 0}
-  threshold: 0.684
+  threshold: 1
   texture: {fileID: 2800000, guid: e2d9afd12f0737640a488edac292b428, type: 3}
   color: {r: 1, g: 1, b: 1, a: 1}
   count: 0
@@ -893,12 +893,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93669d9f171d43e40a38bc8a881b901b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  paintableTexture: {fileID: 4154776878337780446}
+  paintableTexture: {fileID: 8961403474103463775}
   interval: 0
   async: 1
-  downsampleSteps: 9
-  registeredPaintableTexture: {fileID: 4154776878337780446}
-  cooldown: -14227.117
+  downsampleSteps: 2
+  registeredPaintableTexture: {fileID: 8961403474103463775}
+  cooldown: -16312.985
   currentReader:
     dirty: 0
     requested: 0
@@ -910,7 +910,7 @@ MonoBehaviour:
     tempTexture: {fileID: 0}
   maskMesh: {fileID: 0}
   maskSubmesh: 0
-  maskTexture: {fileID: 2800000, guid: b9ceaf1128a07d947a32f20d5c919a47, type: 3}
+  maskTexture: {fileID: 2800000, guid: d4b5fdc5fed953a4a9d8f1438cd813c6, type: 3}
   maskChannel: 3
   total: 0
   maskReader:
@@ -923,7 +923,7 @@ MonoBehaviour:
     downsampleBoost: 0
     tempTexture: {fileID: 0}
   threshold: 1
-  texture: {fileID: 2800000, guid: 942c151fc6422b048abd94c2cfcf650c, type: 3}
+  texture: {fileID: 2800000, guid: d8f74f01fbc74024eb5534ada893a587, type: 3}
   color: {r: 1, g: 1, b: 1, a: 1}
   count: 0
   changeReader:
@@ -7316,7 +7316,7 @@ MonoBehaviour:
   paintableTexture: {fileID: 8961403474103463775}
   interval: 0
   async: 1
-  downsampleSteps: 9
+  downsampleSteps: 10
   registeredPaintableTexture: {fileID: 0}
   cooldown: -13359.802
   currentReader:
@@ -7368,11 +7368,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   paintableTexture: {fileID: 4154776878337780446}
-  interval: 0
+  interval: 2
   async: 1
-  downsampleSteps: 9
+  downsampleSteps: 1
   registeredPaintableTexture: {fileID: 4154776878337780446}
-  cooldown: -879.8586
+  cooldown: -2970.5286
   currentReader:
     dirty: 1
     requested: 0
@@ -7396,7 +7396,7 @@ MonoBehaviour:
     downsampleSteps: 0
     downsampleBoost: 0
     tempTexture: {fileID: 0}
-  threshold: 0.962
+  threshold: 1
   countR: 0
   countG: 0
   countB: 0
@@ -8270,7 +8270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   counters:
   - {fileID: 135857161}
-  inverse: 0
+  inverse: 1
   decimalPlaces: 0
   format: '{PERCENT}%
 
@@ -13648,7 +13648,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1313161617}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2f9cea69abe8304a84accae904c56be, type: 3}
   m_Name: 
@@ -18643,7 +18643,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1424016269}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d01c908fd373fad469480009d939521b, type: 3}
   m_Name: 
@@ -20756,7 +20756,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 676a656487199f34894c70f2bc2ff038, type: 2}
-  - {fileID: 2100000, guid: 40a1dd1f477dc1c4985c4eb770bc6d99, type: 2}
+  - {fileID: 2100000, guid: 24065b9b264997e48bf4f998c516f9f0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -27170,10 +27170,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dirtTexture: {fileID: 2800000, guid: e90cb6af71aba6b43ab228c305ec380d, type: 3}
   foamTexture: {fileID: 2800000, guid: e2d9afd12f0737640a488edac292b428, type: 3}
-  waterTexture: {fileID: 0}
+  waterTexture: {fileID: 2800000, guid: d8f74f01fbc74024eb5534ada893a587, type: 3}
   transparent: {fileID: 2800000, guid: 2519327e9baf81b4395425c65e688f2a, type: 3}
   mainTexture: {fileID: 2800000, guid: d4b5fdc5fed953a4a9d8f1438cd813c6, type: 3}
-  glassMaskTexture: {fileID: 0}
+  glassMaskTexture: {fileID: 2800000, guid: e2d47f6f56d4ecb489fad9a7dd5d435f, type: 3}
 --- !u!33 &9103992613383935887
 MeshFilter:
   m_ObjectHideFlags: 0
