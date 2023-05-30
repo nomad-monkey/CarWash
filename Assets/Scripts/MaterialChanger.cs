@@ -8,16 +8,16 @@ public class MaterialChanger : MonoBehaviour
 {
 
     
-    [SerializeField] private Material carTransparentMaterial;
-    [SerializeField] private Image cameraImage ;
-    [SerializeField] private MeshRenderer quadRenderer;
+    private Material carTransparentMaterial;
+   
+    
     
     [SerializeField] private MeshRenderer[] quadRenderers;
 
     private void Start()
     {
         carTransparentMaterial = gameObject.GetComponent<MeshRenderer>().materials[2];
-        cameraImage.material = carTransparentMaterial;
+      
        // quadRenderer.material = carTransparentMaterial;
 
         Debug.Log(carTransparentMaterial.GetTexture("_MainTex").name);
