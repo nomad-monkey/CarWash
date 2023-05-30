@@ -21,9 +21,15 @@ public class CWPainterManager : MonoBehaviour
     
     [SerializeField] private P3dHitParticles foamParticles;
     [SerializeField] private P3dHitParticles waterParticles;
-    
-   // [SerializeField] private P3dHitParticles fabricPainter;
+    // [SerializeField] private P3dHitParticles fabricPainter;
    // [SerializeField] private P3dHitParticles  squeegee;
+   
+   
+   [SerializeField] private P3dHitParticles foamParticlesSphere;
+   [SerializeField] private P3dHitParticles waterParticlesSphere;
+   [SerializeField] private P3dHitParticles fabricPainterSphere;
+   [SerializeField] private P3dHitParticles squeegeeSphere;
+
    
    
    [SerializeField] private P3dChangeCounter foamCounter;
@@ -60,9 +66,8 @@ public class CWPainterManager : MonoBehaviour
         
         carToWorkOn=currentCar.currenCar;
         mainPaintableTexture = currentCar.GetComponents<P3dPaintableTexture>();
-        
-            
-            carManager= currentCar.GetComponent<CWCarManager>();
+
+        carManager= currentCar.GetComponent<CWCarManager>();
 
         dirtTexture = carManager.dirtTexture;
         foamTexture = carManager.foamTexture;
@@ -169,6 +174,8 @@ public class CWPainterManager : MonoBehaviour
 
           OnCarFinished();
         }
+        
+        
         
         
         
