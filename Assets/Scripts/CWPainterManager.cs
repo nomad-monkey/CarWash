@@ -6,68 +6,96 @@ using UnityEngine;
 
 public class CWPainterManager : MonoBehaviour
 {
-    [SerializeField] private GameObject carToWorkOn;
+  
     [SerializeField] private CWCarDefiner currentCar;
-    [SerializeField] private P3dPaintableTexture [] mainPaintableTexture;
+    
    
-    [SerializeField] private CWCarManager carManager;
-    
-    [SerializeField] private Texture dirtTexture;
-    [SerializeField] private Texture foamTexture;
-    [SerializeField] private Texture waterTexture;
-    [SerializeField] private Texture mainTexture;
-    [SerializeField] private Texture glassMaskTexture;
-
-    
     [SerializeField] private P3dHitParticles foamParticles;
+    [SerializeField] private P3dPaintSphere foamParticlesSphere;
+    
     [SerializeField] private P3dHitParticles waterParticles;
-    // [SerializeField] private P3dHitParticles fabricPainter;
-   // [SerializeField] private P3dHitParticles  squeegee;
+    [SerializeField] private P3dPaintSphere waterParticlesSphere; 
+    
+    [SerializeField] private P3dHitBetween fabricPainter;
+    [SerializeField] private P3dPaintSphere fabricPainterSphere;
+    [SerializeField] private P3dHitBetween squeegee;
+    [SerializeField] private P3dPaintSphere squeegeeSphere;
+    
+    
+    [SerializeField] private P3dChangeCounter foamCounter;
+    [SerializeField] private P3dChangeCounter waterCounter;
+    [SerializeField] private P3dChangeCounter glassCounter ;
+    [SerializeField] private P3dChangeCounter fabricCounter;
+    
+    
+    [SerializeField] private P3dChannelCounter glassCounterAlpha ;
+    [SerializeField] private P3dChannelCounter fabricCounterAlpha;
+    
+    [SerializeField] private Texture transparentTexture;
    
-   
-   [SerializeField] private P3dHitParticles foamParticlesSphere;
-   [SerializeField] private P3dHitParticles waterParticlesSphere;
-   [SerializeField] private P3dHitParticles fabricPainterSphere;
-   [SerializeField] private P3dHitParticles squeegeeSphere;
-
-   
-   
-   [SerializeField] private P3dChangeCounter foamCounter;
-   [SerializeField] private P3dChangeCounter waterCounter;
-   [SerializeField] private P3dChangeCounter glassCounter ;
-   [SerializeField] private P3dChangeCounter fabricCounter;
-
+    private P3dPaintableTexture [] mainPaintableTexture;
+    private CWCarManager carManager;
+    private GameObject carToWorkOn;
+    private Texture dirtTexture;
+    private Texture foamTexture;
+    private Texture waterTexture;
+    private Texture mainTexture; 
+    private Texture glassMaskTexture;
 
     private bool isFoamFinished;
     private bool isWaterFinished;
     private bool isGlassFinished;
     private bool isFabricFinished;
+    private bool isCarFinished;
+    private bool newCar;
     
     
     void Start()
     {
-       
+        newCar = false;
+        isFoamFinished = false;
+        isWaterFinished = false;
+        isGlassFinished = false;
+        isFabricFinished = false;
+        isCarFinished = false;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        CheckCounters();
+        if (!newCar && waterCounter.Count==0)
+        {
+            newCar = false;
+            
+        }
+        else if (!newCar && waterCounter.Count!=0 )
+        {
+          NewCar();
+        }
+
+        if (newCar)
+        {
+            CheckCounters();
+        }
+       
     }
 
 
     void NewCar()
     {
-        isFoamFinished=false;
-        isWaterFinished=false;
-        isGlassFinished=false;
-        isFabricFinished=false;
+        newCar = true;
+        isFoamFinished = false;
+        isWaterFinished = false;
+        isGlassFinished = false;
+        isFabricFinished = false;
+        isCarFinished = false;
         
-        carToWorkOn=currentCar.currenCar;
-        mainPaintableTexture = currentCar.GetComponents<P3dPaintableTexture>();
-
-        carManager= currentCar.GetComponent<CWCarManager>();
+        carToWorkOn = currentCar.currentCar;
+       
+        mainPaintableTexture = carToWorkOn.GetComponents<P3dPaintableTexture>();
+        carManager= carToWorkOn.GetComponent<CWCarManager>();
 
         dirtTexture = carManager.dirtTexture;
         foamTexture = carManager.foamTexture;
@@ -75,13 +103,11 @@ public class CWPainterManager : MonoBehaviour
         mainTexture = carManager.mainTexture;
         glassMaskTexture = carManager.glassMaskTexture;
 
+       
         mainPaintableTexture[0].LocalMaskTexture = mainTexture;
-      
-        
-        foamParticles.enabled = true;
-        waterParticles.enabled = false;
 
-        
+
+
         foamCounter.PaintableTexture = mainPaintableTexture[0];
         foamCounter.MaskTexture = mainTexture;
         foamCounter.Texture = foamTexture;
@@ -92,83 +118,140 @@ public class CWPainterManager : MonoBehaviour
         
         glassCounter.PaintableTexture = mainPaintableTexture[0];
         glassCounter.MaskTexture = glassMaskTexture ;
-        glassCounter.Texture = mainTexture;
+        glassCounter.Texture = transparentTexture;
         
         fabricCounter.PaintableTexture = mainPaintableTexture[0];
         fabricCounter.MaskTexture = mainTexture;
-        fabricCounter.MaskTexture = mainTexture;
+        fabricCounter.Texture = transparentTexture;
+        
+        glassCounterAlpha.PaintableTexture=mainPaintableTexture[0];
+        glassCounterAlpha.MaskTexture = glassMaskTexture;
+
+        fabricCounterAlpha.PaintableTexture=mainPaintableTexture[0];
+        fabricCounterAlpha.MaskTexture = mainTexture;
+        
+        
 
 
+        waterParticlesSphere.BlendMode= P3dBlendMode.ReplaceCustom(Color.white, waterTexture, Vector4.one);
+       
+        FoamActive();
+
+    }
+    
+    
+    public void FoamActive()
+    {
+        foamParticles.enabled = true; 
+        waterParticles.enabled = false;
+        fabricPainter.enabled = false; 
+        squeegee.enabled = false;
+        mainPaintableTexture[0].LocalMaskTexture = mainTexture;
     }
 
     public void OnFoamFinish()
     {
-        
-        
-        
         isFoamFinished = true;
+        WaterActive();
+    }
+    
+    
+    public void WaterActive()
+    {
+        mainPaintableTexture[0].LocalMaskTexture = mainTexture;
+        foamParticles.enabled = false; 
+        waterParticles.enabled = true;
+        fabricPainter.enabled = false; 
+        squeegee.enabled = false;
+        
 
     }
     
     
     public void OnWaterFinish()
     {
+        SqueegeeActive();
+        isWaterFinished = true;
+    }
+    
+    public void SqueegeeActive()
+    {
         
         mainPaintableTexture[0].LocalMaskTexture = glassMaskTexture;
-        
-        isWaterFinished = true;
-
+        foamParticles.enabled = false; 
+        waterParticles.enabled = false;
+        squeegee.enabled = true;
+        fabricPainter.enabled = false;
     }
     
     public void OnGlassFinish()
-    {
-        
-        
-        
-        isGlassFinished = true;
-
+    { 
+        FabricActive();
+        isGlassFinished = true; 
     }
     
+   
+    public void FabricActive()
+    {
+        mainPaintableTexture[0].LocalMaskTexture = mainTexture;
+        foamParticles.enabled = false; 
+        waterParticles.enabled = false;
+        squeegee.enabled = false;
+        fabricPainter.enabled = true;
+        
+
+    }
+
     
     public void OnFabricFinish()
     {
         
-        
-        
+        mainPaintableTexture[0].LocalMaskTexture = mainTexture;
+        foamParticles.enabled = false; 
+        waterParticles.enabled = false;
+        squeegee.enabled = false;
+        fabricPainter.enabled = false;
+
         isFabricFinished = true;
 
     }
-
+    
+   
     public void OnCarFinished()
     {
-        
-        
+        isCarFinished = true; 
+        Debug.Log("Car Finished");
         
     }
 
+  
+    
     void CheckCounters()
     {
-        if (foamCounter.Count == 0 && !isFoamFinished)
-        {
+        if (foamCounter.Ratio >0.99f && !isFoamFinished)
+        {  
+            Debug.Log("Foam Finished");
             OnFoamFinish();
         }
         
-        if (waterCounter.Count == 0 && !isWaterFinished)
+        if (waterCounter.Ratio >0.99f&& !isWaterFinished && isFoamFinished)
         {
+            Debug.Log(" Water Finished");
             OnWaterFinish();
         }
         
-        if (glassCounter.Count == 0 && !isGlassFinished)
-        {
+        if (glassCounter.Count >0.99f && !isGlassFinished && isWaterFinished && isFoamFinished)
+        {   Debug.Log(" Glass Finished");
             OnGlassFinish();
         }
         
-        if (fabricCounter.Count == 0 && !isFabricFinished)
+        if (fabricCounter.Count >0.99f && !isFabricFinished && isGlassFinished && isWaterFinished && isFoamFinished)
         {
+            Debug.Log(" Fabric Finished");
             OnFabricFinish();
         }
 
-        if (isFoamFinished&&isWaterFinished&&isGlassFinished&&isFabricFinished)
+        if (isFoamFinished && isWaterFinished && isGlassFinished && isFabricFinished && !isCarFinished)
         {
           Debug.Log("Car Finished");
 
