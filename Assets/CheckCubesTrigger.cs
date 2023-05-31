@@ -105,7 +105,7 @@ public class CheckCubesTrigger : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit,0.3f, 8))
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
             
            
             if (hit.transform.gameObject.layer == 8)
@@ -118,7 +118,7 @@ public class CheckCubesTrigger : MonoBehaviour
         }
         else
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.red);
         }
 
     }
@@ -133,7 +133,7 @@ public class CheckCubesTrigger : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.down, out hit,0.3f, 9))
         {
-            Debug.DrawRay(transform.position, Vector3.down * hit.distance, Color.yellow);
+            Debug.DrawRay(transform.position, Vector3.down * hit.distance, Color.red);
            
            
             if (hit.transform.gameObject.layer == 9)
@@ -146,7 +146,7 @@ public class CheckCubesTrigger : MonoBehaviour
         }
         else
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.red);
         }
 
     }
