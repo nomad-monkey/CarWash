@@ -698,7 +698,7 @@ MonoBehaviour:
   async: 1
   downsampleSteps: 1
   registeredPaintableTexture: {fileID: 4154776878337780446}
-  cooldown: -6507.281
+  cooldown: -6859.836
   currentReader:
     dirty: 1
     requested: 0
@@ -1101,7 +1101,7 @@ MonoBehaviour:
   async: 1
   downsampleSteps: 1
   registeredPaintableTexture: {fileID: 4154776878337780446}
-  cooldown: -19240.666
+  cooldown: -19592.988
   currentReader:
     dirty: 0
     requested: 0
@@ -2099,7 +2099,7 @@ MonoBehaviour:
   async: 1
   downsampleSteps: 1
   registeredPaintableTexture: {fileID: 8961403474103463775}
-  cooldown: -19251.375
+  cooldown: -19603.697
   currentReader:
     dirty: 0
     requested: 0
@@ -10970,7 +10970,7 @@ MonoBehaviour:
   async: 1
   downsampleSteps: 1
   registeredPaintableTexture: {fileID: 4154776878337780446}
-  cooldown: -5903.1226
+  cooldown: -6255.6777
   currentReader:
     dirty: 1
     requested: 0

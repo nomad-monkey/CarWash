@@ -5183,7 +5183,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 9d5d6bc7da99e1c4ebf8d464be169255, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 24b26761f8f519247bc6dab750ac9219, type: 2}
+      objectReference: {fileID: 2100000, guid: 25bfb22bffbbb01439bc812b761ad812, type: 2}
     - target: {fileID: 919132149155446097, guid: 9d5d6bc7da99e1c4ebf8d464be169255, type: 3}
       propertyPath: m_Name
       value: Jeep4NoInside
