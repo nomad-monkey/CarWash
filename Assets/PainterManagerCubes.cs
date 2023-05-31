@@ -1,36 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
-using CW.Common;
 using PaintIn3D;
 using UnityEngine;
 
-public class CWPainterManager : MonoBehaviour
+public class PainterManagerCubes : MonoBehaviour
 {
-  
-    [SerializeField] private CWCarDefiner currentCar;
-    
    
-    [SerializeField] private P3dHitParticles foamParticles;
+    [SerializeField] private CWCarDefiner currentCar;
+
     [SerializeField] private P3dPaintSphere foamParticlesSphere;
-    
-    [SerializeField] private P3dHitParticles waterParticles;
-    [SerializeField] private P3dPaintSphere waterParticlesSphere; 
-    
-    [SerializeField] private P3dHitBetween fabricPainter;
+    [SerializeField] private P3dPaintSphere waterParticlesSphere;
     [SerializeField] private P3dPaintSphere fabricPainterSphere;
-    [SerializeField] private P3dHitBetween squeegee;
     [SerializeField] private P3dPaintSphere squeegeeSphere;
-    
-    
-    [SerializeField] private P3dChangeCounter foamCounter;
-    [SerializeField] private P3dChangeCounter waterCounter;
-    //[SerializeField] private P3dChangeCounter glassCounter ;
-    //[SerializeField] private P3dChangeCounter fabricCounter;
-    
-    
-    [SerializeField] private P3dChannelCounter glassCounterAlpha ;
-    [SerializeField] private P3dChannelCounter fabricCounterAlpha;
-    
     [SerializeField] private Texture transparentTexture;
    
     
@@ -55,6 +36,18 @@ public class CWPainterManager : MonoBehaviour
     private bool isFabricFinished;
     private bool isCarFinished;
     private bool newCar;
+
+
+    public int foamMax;
+    public int waterMax;
+    public int squeegeMax;
+    public int fabricMax;
+    
+    [SerializeField]  CheckCubesTrigger foamTrigger;
+    [SerializeField]  CheckCubesTrigger waterTrigger;
+    [SerializeField]  CheckCubesTrigger  squeegeTrigger;
+    [SerializeField]  CheckCubesTrigger fabricTrigger;
+    
     
     
     void Start()
@@ -121,32 +114,6 @@ public class CWPainterManager : MonoBehaviour
 
 
 
-        foamCounter.PaintableTexture = mainPaintableTexture[0];
-        foamCounter.MaskTexture = mainTexture;
-        foamCounter.Texture = foamTexture;
-
-        waterCounter.PaintableTexture = mainPaintableTexture[0];
-        waterCounter.MaskTexture = mainTexture;
-        waterCounter.Texture = waterTexture;
-        
-        /*glassCounter.PaintableTexture = mainPaintableTexture[0];
-        glassCounter.MaskTexture = glassMaskTexture ;
-        glassCounter.Texture = transparentTexture;
-        */
-        
-      /*  fabricCounter.PaintableTexture = mainPaintableTexture[0];
-        fabricCounter.MaskTexture = mainTexture;
-        fabricCounter.Texture = transparentTexture;*/
-        
-        glassCounterAlpha.PaintableTexture = mainPaintableTexture[0];
-        glassCounterAlpha.MaskTexture = glassMaskTexture;
-
-        fabricCounterAlpha.PaintableTexture=mainPaintableTexture[0];
-        fabricCounterAlpha.MaskTexture = mainTexture;
-        
-        
-
-
         waterParticlesSphere.BlendMode= P3dBlendMode.ReplaceCustom(Color.white, waterTexture, Vector4.one);
        
         FoamActive();
@@ -156,15 +123,7 @@ public class CWPainterManager : MonoBehaviour
     
     public void FoamActive()
     {
-        /*foamParticles.enabled = true; 
-        waterParticles.enabled = false;
-        fabricPainter.enabled = false; 
-        squeegee.enabled = false;
-        squeegeeSphere.enabled = false;
-        fabricPainterSphere.enabled = false;
-        foamParticlesSphere.enabled = true;
-        waterParticlesSphere.enabled = false;*/
-        
+
         squeegeeSphere.Radius = 0;
         fabricPainterSphere.Radius=0;
         foamParticlesSphere.Radius= foamRadius;
@@ -186,16 +145,7 @@ public class CWPainterManager : MonoBehaviour
     public void WaterActive()
     {
         mainPaintableTexture[0].LocalMaskTexture = null;
-        //foamParticles.enabled = false; 
-       /* waterParticles.enabled = true;
-        fabricPainter.enabled = false; 
-        squeegee.enabled = false;
-        
-        foamParticlesSphere.enabled = true;
-        waterParticlesSphere.enabled = true;
-        squeegeeSphere.enabled = false;
-        fabricPainterSphere.enabled = false;*/
-       
+      
        squeegeeSphere.Radius = 0;
        fabricPainterSphere.Radius=0;
        foamParticlesSphere.Radius= foamRadius;
@@ -215,16 +165,7 @@ public class CWPainterManager : MonoBehaviour
     {
         
         mainPaintableTexture[0].LocalMaskTexture = glassMaskTexture;
-       /* //foamParticles.enabled = false; 
-        //waterParticles.enabled = false;
-        squeegee.enabled = true;
-        fabricPainter.enabled = false;
-        
-        foamParticlesSphere.enabled = true;
-        waterParticlesSphere.enabled = true;
-        squeegeeSphere.enabled = true;
-        fabricPainterSphere.enabled = false;*/
-       
+     
        squeegeeSphere.Radius =squeegeeRadius;
        fabricPainterSphere.Radius= 0;
        foamParticlesSphere.Radius= foamRadius;
@@ -241,18 +182,7 @@ public class CWPainterManager : MonoBehaviour
     public void FabricActive()
     {
         mainPaintableTexture[0].LocalMaskTexture = null;
-      /* //foamParticles.enabled = false; 
-        //waterParticles.enabled = false;
-        //squeegee.enabled = false;
-        fabricPainter.enabled = true;
-        
-         
-        foamParticlesSphere.enabled = true;
-        waterParticlesSphere.enabled = true;
-        squeegeeSphere.enabled = true;
-        fabricPainterSphere.enabled = true;*/
-      
-      squeegeeSphere.Radius = squeegeeRadius;
+        squeegeeSphere.Radius = squeegeeRadius;
       fabricPainterSphere.Radius = fabricRadius;
       foamParticlesSphere.Radius = foamRadius;
       waterParticlesSphere.Radius = waterRadius;
@@ -265,10 +195,7 @@ public class CWPainterManager : MonoBehaviour
     {
         
         mainPaintableTexture[0].LocalMaskTexture = null;
-       // foamParticles.enabled = false; 
-        //waterParticles.enabled = false;
-        //squeegee.enabled = false;
-       // fabricPainter.enabled = false;
+       
 
        isFabricFinished = true;
        
@@ -288,24 +215,24 @@ public class CWPainterManager : MonoBehaviour
     
     void CheckCounters()
     {
-        if (foamCounter.Total>0 && 1-foamCounter.Ratio >0.70f && !isFoamFinished)
+        if (foamMax==foamTrigger.hitNumber && !isFoamFinished)
         {  
-            Debug.Log("Foam Finished" + foamCounter.Ratio);
+            Debug.Log("Foam Finished" );
             OnFoamFinish();
         }
         
-        if (waterCounter.Total>0 && 1-waterCounter.Ratio >0.70f&& !isWaterFinished && isFoamFinished && 1-foamCounter.Ratio < 0.30f )
+        if (  waterMax==waterTrigger.hitNumber  && !isWaterFinished && isFoamFinished )
         {
-            Debug.Log("Water Finished" + waterCounter.Ratio);
+            Debug.Log("Water Finished");
             OnWaterFinish();
         }
         
-        if (glassCounterAlpha.Total > 0 && 1-glassCounterAlpha.RatioA > 0.90f && !isGlassFinished && isWaterFinished && isFoamFinished)
+        if ( squeegeMax==squeegeTrigger.hitNumber && !isGlassFinished && isWaterFinished && isFoamFinished)
         {   Debug.Log(" Glass Finished");
             OnGlassFinish();
         }
         
-        if (fabricCounterAlpha.Total >0 && 1-fabricCounterAlpha.RatioA > 0.70f && !isFabricFinished && isGlassFinished && isWaterFinished && isFoamFinished)
+        if (fabricMax == fabricTrigger.hitNumber && !isFabricFinished && isGlassFinished && isWaterFinished && isFoamFinished)
         {
             Debug.Log(" Fabric Finished");
             OnFabricFinish();
@@ -330,4 +257,6 @@ public class CWPainterManager : MonoBehaviour
 
 
 }
+
+
 
