@@ -298,7 +298,7 @@ public class CWPainterManager : MonoBehaviour
             OnFoamFinish();
         }
         
-        if (waterCounter.Total>0 && 1-waterCounter.Ratio >0.70f&& !isWaterFinished && isFoamFinished && 1-foamCounter.Ratio < 0.30f )
+        if (waterCounter.Total>0 && 1-waterCounter.Ratio >0.70f&& !isWaterFinished && isFoamFinished)
         {
             Debug.Log("Water Finished" + waterCounter.Ratio);
             OnWaterFinish();
