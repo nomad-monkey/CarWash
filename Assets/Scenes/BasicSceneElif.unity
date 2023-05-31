@@ -634,17 +634,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 68638578}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 93669d9f171d43e40a38bc8a881b901b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   paintableTexture: {fileID: 8961403474103463775}
-  interval: 2
+  interval: 0
   async: 1
-  downsampleSteps: 1
-  registeredPaintableTexture: {fileID: 8961403474103463775}
-  cooldown: -13422.05
+  downsampleSteps: 10
+  registeredPaintableTexture: {fileID: 0}
+  cooldown: -13384.683
   currentReader:
     dirty: 0
     requested: 0
@@ -668,7 +668,7 @@ MonoBehaviour:
     downsampleSteps: 0
     downsampleBoost: 0
     tempTexture: {fileID: 0}
-  threshold: 0.311
+  threshold: 1
   texture: {fileID: 2800000, guid: 2519327e9baf81b4395425c65e688f2a, type: 3}
   color: {r: 1, g: 1, b: 1, a: 1}
   count: 0
@@ -688,7 +688,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 68638578}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36c192c747e3eba458dd59e5bb7150d8, type: 3}
   m_Name: 
@@ -697,8 +697,8 @@ MonoBehaviour:
   interval: 2
   async: 1
   downsampleSteps: 1
-  registeredPaintableTexture: {fileID: 0}
-  cooldown: -6970.3486
+  registeredPaintableTexture: {fileID: 4154776878337780446}
+  cooldown: -6859.836
   currentReader:
     dirty: 1
     requested: 0
@@ -722,7 +722,7 @@ MonoBehaviour:
     downsampleSteps: 0
     downsampleBoost: 0
     tempTexture: {fileID: 0}
-  threshold: 0.081
+  threshold: 1
   countR: 0
   countG: 0
   countB: 0
@@ -1101,7 +1101,7 @@ MonoBehaviour:
   async: 1
   downsampleSteps: 1
   registeredPaintableTexture: {fileID: 4154776878337780446}
-  cooldown: -19737.66
+  cooldown: -19592.988
   currentReader:
     dirty: 0
     requested: 0
@@ -1125,7 +1125,7 @@ MonoBehaviour:
     downsampleSteps: 0
     downsampleBoost: 0
     tempTexture: {fileID: 0}
-  threshold: 0.243
+  threshold: 1
   texture: {fileID: 2800000, guid: e2d9afd12f0737640a488edac292b428, type: 3}
   color: {r: 1, g: 1, b: 1, a: 1}
   count: 0
@@ -2099,7 +2099,7 @@ MonoBehaviour:
   async: 1
   downsampleSteps: 1
   registeredPaintableTexture: {fileID: 8961403474103463775}
-  cooldown: -19748.37
+  cooldown: -19603.697
   currentReader:
     dirty: 0
     requested: 0
@@ -2123,7 +2123,7 @@ MonoBehaviour:
     downsampleSteps: 0
     downsampleBoost: 0
     tempTexture: {fileID: 0}
-  threshold: 0.287
+  threshold: 1
   texture: {fileID: 2800000, guid: d8f74f01fbc74024eb5534ada893a587, type: 3}
   color: {r: 1, g: 1, b: 1, a: 1}
   count: 0
@@ -3196,13 +3196,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 372716449}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 44f659a7130b0024a9af827de28bb55d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   counters:
-  - {fileID: 68638580}
+  - {fileID: 135857161}
   inverse: 1
 --- !u!114 &372716452
 MonoBehaviour:
@@ -3249,7 +3249,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 372716449}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f7a5f01a1865bc24cbfeb97ef8805b4d, type: 3}
   m_Name: 
@@ -3579,33 +3579,21 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 406676551}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9784f6d7962272c4999a0a1275ef0d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   counters:
-  - {fileID: 729132183}
-  inverse: 1
+  - {fileID: 135857161}
+  inverse: 0
   decimalPlaces: 0
   format: '{PERCENT}%
 
     Painted'
   onString:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 406676555}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &406676554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3613,7 +3601,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 406676551}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e76845ae3a2deec40858e278575ab4ea, type: 3}
   m_Name: 
@@ -5552,7 +5540,7 @@ MonoBehaviour:
   blendMode:
     Index: 9
     Color: {r: 1, g: 1, b: 1, a: 1}
-    Texture: {fileID: 2800000, guid: 17cb7f35ca020294c8fedbcf8c3ee8e4, type: 3}
+    Texture: {fileID: 2800000, guid: e2d9afd12f0737640a488edac292b428, type: 3}
     Kernel: 1
     Channels: {x: 1, y: 1, z: 1, w: 1}
   color: {r: 1, g: 1, b: 1, a: 1}
@@ -10918,17 +10906,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 729132181}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 93669d9f171d43e40a38bc8a881b901b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   paintableTexture: {fileID: 8961403474103463775}
-  interval: 2
+  interval: 0
   async: 1
-  downsampleSteps: 1
-  registeredPaintableTexture: {fileID: 8961403474103463775}
-  cooldown: -13396.574
+  downsampleSteps: 10
+  registeredPaintableTexture: {fileID: 0}
+  cooldown: -13359.802
   currentReader:
     dirty: 0
     requested: 0
@@ -10952,7 +10940,7 @@ MonoBehaviour:
     downsampleSteps: 0
     downsampleBoost: 0
     tempTexture: {fileID: 0}
-  threshold: 0.265
+  threshold: 1
   texture: {fileID: 2800000, guid: 2519327e9baf81b4395425c65e688f2a, type: 3}
   color: {r: 1, g: 1, b: 1, a: 1}
   count: 0
@@ -10972,7 +10960,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 729132181}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36c192c747e3eba458dd59e5bb7150d8, type: 3}
   m_Name: 
@@ -10981,8 +10969,8 @@ MonoBehaviour:
   interval: 2
   async: 1
   downsampleSteps: 1
-  registeredPaintableTexture: {fileID: 0}
-  cooldown: -6366.8267
+  registeredPaintableTexture: {fileID: 4154776878337780446}
+  cooldown: -6255.6777
   currentReader:
     dirty: 1
     requested: 0
@@ -11006,7 +10994,7 @@ MonoBehaviour:
     downsampleSteps: 0
     downsampleBoost: 0
     tempTexture: {fileID: 0}
-  threshold: 0.104
+  threshold: 1
   countR: 0
   countG: 0
   countB: 0
@@ -13077,63 +13065,10 @@ MonoBehaviour:
   tileOpacity: 3
   tileTransition: 4
   modifiers:
-    modifiers:
-    - rid: 335253904799301636
-    - rid: 335253904799301637
-    - rid: 335253904799301638
+    modifiers: []
   references:
     version: 2
-    RefIds:
-    - rid: 335253904799301636
-      type: {class: P3dModifyOpacityPressure, ns: PaintIn3D, asm: PaintIn3D}
-      data:
-        preview: 1
-        unique: 1
-        opacity: 2.23
-        blend: 0
-    - rid: 335253904799301637
-      type: {class: P3dModifyColorRandom, ns: PaintIn3D, asm: PaintIn3D}
-      data:
-        preview: 1
-        unique: 1
-        gradient:
-          serializedVersion: 2
-          key0: {r: 1, g: 1, b: 1, a: 1}
-          key1: {r: 1, g: 1, b: 1, a: 1}
-          key2: {r: 0, g: 0, b: 0, a: 0}
-          key3: {r: 0, g: 0, b: 0, a: 0}
-          key4: {r: 0, g: 0, b: 0, a: 0}
-          key5: {r: 0, g: 0, b: 0, a: 0}
-          key6: {r: 0, g: 0, b: 0, a: 0}
-          key7: {r: 0, g: 0, b: 0, a: 0}
-          ctime0: 0
-          ctime1: 65535
-          ctime2: 0
-          ctime3: 0
-          ctime4: 0
-          ctime5: 0
-          ctime6: 0
-          ctime7: 0
-          atime0: 0
-          atime1: 65535
-          atime2: 0
-          atime3: 0
-          atime4: 0
-          atime5: 0
-          atime6: 0
-          atime7: 0
-          m_Mode: 0
-          m_NumColorKeys: 2
-          m_NumAlphaKeys: 2
-        blend: 0
-    - rid: 335253904799301638
-      type: {class: P3dModifyOpacityRandom, ns: PaintIn3D, asm: PaintIn3D}
-      data:
-        preview: 1
-        unique: 1
-        min: 1
-        max: 1.5
-        blend: 0
+    RefIds: []
 --- !u!4 &982842864
 Transform:
   m_ObjectHideFlags: 0
@@ -14598,13 +14533,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1156750732}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9784f6d7962272c4999a0a1275ef0d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   counters:
-  - {fileID: 68638580}
+  - {fileID: 135857161}
   inverse: 1
   decimalPlaces: 0
   format: '{PERCENT}%
@@ -14612,19 +14547,7 @@ MonoBehaviour:
     Painted'
   onString:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1156750736}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1156750735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14632,7 +14555,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1156750732}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e76845ae3a2deec40858e278575ab4ea, type: 3}
   m_Name: 
@@ -20566,15 +20489,15 @@ MonoBehaviour:
   blendMode:
     Index: 9
     Color: {r: 1, g: 1, b: 1, a: 1}
-    Texture: {fileID: 2800000, guid: 4fde7194770341045b4d4b9fe5552017, type: 3}
+    Texture: {fileID: 2800000, guid: 942c151fc6422b048abd94c2cfcf650c, type: 3}
     Kernel: 1
     Channels: {x: 1, y: 1, z: 1, w: 1}
   color: {r: 1, g: 1, b: 1, a: 1}
   opacity: 1
   angle: 0
-  scale: {x: 1, y: 0.2, z: 1}
+  scale: {x: 1, y: 1, z: 1}
   radius: 0.56
-  hardness: 100
+  hardness: 1
   tileTexture: {fileID: 0}
   tileTransform: {fileID: 0}
   tileOpacity: 3
@@ -20583,7 +20506,6 @@ MonoBehaviour:
     modifiers:
     - rid: 335253789804331016
     - rid: 335253789804331017
-    - rid: 335253904799301632
   references:
     version: 2
     RefIds:
@@ -20627,15 +20549,7 @@ MonoBehaviour:
       data:
         preview: 1
         unique: 1
-        opacity: 2.3
-        blend: 0
-    - rid: 335253904799301632
-      type: {class: P3dModifyOpacityRandom, ns: PaintIn3D, asm: PaintIn3D}
-      data:
-        preview: 1
-        unique: 1
-        min: 1
-        max: 1.5
+        opacity: 40.9
         blend: 0
 --- !u!114 &1313161620
 MonoBehaviour:
@@ -20644,7 +20558,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1313161617}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2f9cea69abe8304a84accae904c56be, type: 3}
   m_Name: 
@@ -26409,7 +26323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eea4c9f824f39d48b5f226edd2bd58d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentCar: {fileID: 4663837792875067971}
+  currentCar: {fileID: 381874368695451589}
 --- !u!114 &1424016272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26433,8 +26347,6 @@ MonoBehaviour:
   squeegeeSphere: {fileID: 982842863}
   foamCounter: {fileID: 135857161}
   waterCounter: {fileID: 253473172}
-  glassCounter: {fileID: 68638580}
-  fabricCounter: {fileID: 729132183}
   glassCounterAlpha: {fileID: 68638581}
   fabricCounterAlpha: {fileID: 729132184}
   transparentTexture: {fileID: 2800000, guid: 2519327e9baf81b4395425c65e688f2a, type: 3}
@@ -31576,7 +31488,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2088231786}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 44f659a7130b0024a9af827de28bb55d, type: 3}
   m_Name: 
@@ -31629,7 +31541,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2088231786}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f7a5f01a1865bc24cbfeb97ef8805b4d, type: 3}
   m_Name: 
@@ -31756,7 +31668,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &543450652961821805
 Transform:
   m_ObjectHideFlags: 0
@@ -32266,63 +32178,10 @@ MonoBehaviour:
   tileOpacity: 3
   tileTransition: 4
   modifiers:
-    modifiers:
-    - rid: 335253904799301633
-    - rid: 335253904799301634
-    - rid: 335253904799301635
+    modifiers: []
   references:
     version: 2
-    RefIds:
-    - rid: 335253904799301633
-      type: {class: P3dModifyOpacityPressure, ns: PaintIn3D, asm: PaintIn3D}
-      data:
-        preview: 1
-        unique: 1
-        opacity: 2.23
-        blend: 0
-    - rid: 335253904799301634
-      type: {class: P3dModifyOpacityRandom, ns: PaintIn3D, asm: PaintIn3D}
-      data:
-        preview: 1
-        unique: 1
-        min: 1
-        max: 1.5
-        blend: 0
-    - rid: 335253904799301635
-      type: {class: P3dModifyColorRandom, ns: PaintIn3D, asm: PaintIn3D}
-      data:
-        preview: 1
-        unique: 1
-        gradient:
-          serializedVersion: 2
-          key0: {r: 1, g: 1, b: 1, a: 1}
-          key1: {r: 1, g: 1, b: 1, a: 1}
-          key2: {r: 0, g: 0, b: 0, a: 0}
-          key3: {r: 0, g: 0, b: 0, a: 0}
-          key4: {r: 0, g: 0, b: 0, a: 0}
-          key5: {r: 0, g: 0, b: 0, a: 0}
-          key6: {r: 0, g: 0, b: 0, a: 0}
-          key7: {r: 0, g: 0, b: 0, a: 0}
-          ctime0: 0
-          ctime1: 65535
-          ctime2: 0
-          ctime3: 0
-          ctime4: 0
-          ctime5: 0
-          ctime6: 0
-          ctime7: 0
-          atime0: 0
-          atime1: 65535
-          atime2: 0
-          atime3: 0
-          atime4: 0
-          atime5: 0
-          atime6: 0
-          atime7: 0
-          m_Mode: 0
-          m_NumColorKeys: 2
-          m_NumAlphaKeys: 2
-        blend: 0
+    RefIds: []
 --- !u!114 &2951659220919483871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38056,7 +37915,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!33 &4894876687946944722
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -38246,7 +38105,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4663837792875067971}
-  m_Mesh: {fileID: 8684126647557761543, guid: 9d5d6bc7da99e1c4ebf8d464be169255, type: 3}
+  m_Mesh: {fileID: -1121392405200391102, guid: b17d22974e55f47439af548396b4e0eb, type: 3}
 --- !u!114 &8961403474103463775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38281,7 +38140,7 @@ MonoBehaviour:
   wrapV: -1
   existing: 2
   conversion: 0
-  localMaskTexture: {fileID: 0}
+  localMaskTexture: {fileID: 2800000, guid: d4b5fdc5fed953a4a9d8f1438cd813c6, type: 3}
   localMaskChannel: 0
   shaderKeyword: 
   hash:
@@ -38360,11 +38219,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76b1c6bd25f8e9940b3fef1a45af2030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dirtTexture: {fileID: 2800000, guid: 0b630e232242c084e8ebe7b6bf7e0a90, type: 3}
-  foamTexture: {fileID: 2800000, guid: 17cb7f35ca020294c8fedbcf8c3ee8e4, type: 3}
-  waterTexture: {fileID: 2800000, guid: 4fde7194770341045b4d4b9fe5552017, type: 3}
+  dirtTexture: {fileID: 2800000, guid: d4b5fdc5fed953a4a9d8f1438cd813c6, type: 3}
+  foamTexture: {fileID: 2800000, guid: e2d9afd12f0737640a488edac292b428, type: 3}
+  waterTexture: {fileID: 2800000, guid: d8f74f01fbc74024eb5534ada893a587, type: 3}
   transparent: {fileID: 2800000, guid: 2519327e9baf81b4395425c65e688f2a, type: 3}
-  mainTexture: {fileID: 2800000, guid: 0e5d39ded9ab96e45911ac9397a68664, type: 3}
+  mainTexture: {fileID: 2800000, guid: d4b5fdc5fed953a4a9d8f1438cd813c6, type: 3}
   glassMaskTexture: {fileID: 2800000, guid: e2d47f6f56d4ecb489fad9a7dd5d435f, type: 3}
 --- !u!33 &9103992613383935887
 MeshFilter:
