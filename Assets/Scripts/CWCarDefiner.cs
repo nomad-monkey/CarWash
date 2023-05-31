@@ -5,5 +5,5 @@ using UnityEngine;
 public class CWCarDefiner : MonoBehaviour
 {
   
-   public GameObject currenCar;
+   public GameObject currentCar;
 }
