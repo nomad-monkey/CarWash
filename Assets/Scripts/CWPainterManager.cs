@@ -24,8 +24,8 @@ public class CWPainterManager : MonoBehaviour
     
     [SerializeField] private P3dChangeCounter foamCounter;
     [SerializeField] private P3dChangeCounter waterCounter;
-    //[SerializeField] private P3dChangeCounter glassCounter ;
-    //[SerializeField] private P3dChangeCounter fabricCounter;
+    [SerializeField] private P3dChangeCounter glassCounter ;
+    [SerializeField] private P3dChangeCounter fabricCounter;
     
     
     [SerializeField] private P3dChannelCounter glassCounterAlpha ;
@@ -129,14 +129,14 @@ public class CWPainterManager : MonoBehaviour
         waterCounter.MaskTexture = mainTexture;
         waterCounter.Texture = waterTexture;
         
-        /*glassCounter.PaintableTexture = mainPaintableTexture[0];
+        glassCounter.PaintableTexture = mainPaintableTexture[0];
         glassCounter.MaskTexture = glassMaskTexture ;
-        glassCounter.Texture = transparentTexture;
-        */
+        glassCounter.Texture = mainTexture;
         
-      /*  fabricCounter.PaintableTexture = mainPaintableTexture[0];
+        
+        fabricCounter.PaintableTexture = mainPaintableTexture[0];
         fabricCounter.MaskTexture = mainTexture;
-        fabricCounter.Texture = transparentTexture;*/
+        fabricCounter.Texture = mainTexture;
         
         glassCounterAlpha.PaintableTexture = mainPaintableTexture[0];
         glassCounterAlpha.MaskTexture = glassMaskTexture;
@@ -148,6 +148,10 @@ public class CWPainterManager : MonoBehaviour
 
 
         waterParticlesSphere.BlendMode= P3dBlendMode.ReplaceCustom(Color.white, waterTexture, Vector4.one);
+        foamParticlesSphere.BlendMode= P3dBlendMode.ReplaceCustom(Color.white, foamTexture,Vector4.one);
+        
+        fabricPainterSphere.BlendMode= P3dBlendMode.ReplaceCustom(Color.white, mainTexture, Vector4.one);
+        squeegeeSphere.BlendMode= P3dBlendMode.ReplaceCustom(Color.white, mainTexture,Vector4.one);
        
         FoamActive();
 
@@ -300,12 +304,12 @@ public class CWPainterManager : MonoBehaviour
             OnWaterFinish();
         }
         
-        if (glassCounterAlpha.Total > 0 && 1-glassCounterAlpha.RatioA > 0.90f && !isGlassFinished && isWaterFinished && isFoamFinished)
+        if (glassCounter.Total > 0 && 1-glassCounter.Ratio > 0.90f && !isGlassFinished && isWaterFinished && isFoamFinished)
         {   Debug.Log(" Glass Finished");
             OnGlassFinish();
         }
         
-        if (fabricCounterAlpha.Total >0 && 1-fabricCounterAlpha.RatioA > 0.70f && !isFabricFinished && isGlassFinished && isWaterFinished && isFoamFinished)
+        if (fabricCounter.Total >0 && 1-fabricCounter.Ratio > 0.70f && !isFabricFinished && isGlassFinished && isWaterFinished && isFoamFinished)
         {
             Debug.Log(" Fabric Finished");
             OnFabricFinish();
