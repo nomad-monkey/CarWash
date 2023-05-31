@@ -462,11 +462,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   paintableTexture: {fileID: 4154776878337780446}
-  interval: 0
+  interval: 10
   async: 1
   downsampleSteps: 2
   registeredPaintableTexture: {fileID: 4154776878337780446}
-  cooldown: -3580.7603
+  cooldown: -3728.2231
   currentReader:
     dirty: 1
     requested: 0
@@ -547,9 +547,9 @@ MonoBehaviour:
   paintableTexture: {fileID: 4154776878337780446}
   interval: 0
   async: 1
-  downsampleSteps: 2
+  downsampleSteps: 10
   registeredPaintableTexture: {fileID: 4154776878337780446}
-  cooldown: -16314.58
+  cooldown: -16443.363
   currentReader:
     dirty: 0
     requested: 0
@@ -896,9 +896,9 @@ MonoBehaviour:
   paintableTexture: {fileID: 8961403474103463775}
   interval: 0
   async: 1
-  downsampleSteps: 2
+  downsampleSteps: 10
   registeredPaintableTexture: {fileID: 8961403474103463775}
-  cooldown: -16312.985
+  cooldown: -16454.207
   currentReader:
     dirty: 0
     requested: 0
@@ -7370,9 +7370,9 @@ MonoBehaviour:
   paintableTexture: {fileID: 4154776878337780446}
   interval: 2
   async: 1
-  downsampleSteps: 1
+  downsampleSteps: 10
   registeredPaintableTexture: {fileID: 4154776878337780446}
-  cooldown: -2970.5286
+  cooldown: -3124.2764
   currentReader:
     dirty: 1
     requested: 0
@@ -18659,11 +18659,13 @@ MonoBehaviour:
   squeegeeSphere: {fileID: 982842863}
   foamCounter: {fileID: 135857161}
   waterCounter: {fileID: 253473172}
-  glassCounter: {fileID: 68638580}
-  fabricCounter: {fileID: 729132183}
   glassCounterAlpha: {fileID: 68638581}
   fabricCounterAlpha: {fileID: 729132184}
   transparentTexture: {fileID: 2800000, guid: 2519327e9baf81b4395425c65e688f2a, type: 3}
+  foamRadius: 2
+  waterRadius: 0
+  fabricRadius: 0
+  squeegeeRadius: 0
 --- !u!1 &1427701438
 GameObject:
   m_ObjectHideFlags: 0
