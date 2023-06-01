@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using CW.Common;
@@ -8,8 +9,6 @@ public class CWPainterManager : MonoBehaviour
 {
   
     [SerializeField] private CWCarDefiner currentCar;
-    
-   
     [SerializeField] private P3dHitParticles foamParticles;
     [SerializeField] private P3dPaintSphere foamParticlesSphere;
     
@@ -26,6 +25,17 @@ public class CWPainterManager : MonoBehaviour
     [SerializeField] private P3dChangeCounter waterCounter;
     [SerializeField] private P3dChangeCounter glassCounter ;
     [SerializeField] private P3dChangeCounter fabricCounter;
+    
+    [SerializeField] private GameObject ofoamCounter;
+    [SerializeField] private GameObject owaterCounter;
+    [SerializeField] private GameObject oglassCounter ;
+    [SerializeField] private GameObject ofabricCounter;
+    
+    
+    [SerializeField] private GameObject ofoamCounterText;
+    [SerializeField] private GameObject owaterCounterText;
+    [SerializeField] private GameObject oglassCounterText;
+    [SerializeField] private GameObject ofabricCounterText;
     
     
     [SerializeField] private P3dChannelCounter glassCounterAlpha ;
@@ -57,6 +67,15 @@ public class CWPainterManager : MonoBehaviour
     private bool newCar;
     
     
+
+    private void Awake()
+    {
+         foamCounter.enabled=false;
+         waterCounter.enabled=false;
+         glassCounter.enabled=false;
+         fabricCounter.enabled=false;
+    }
+
     void Start()
     {
         newCar = false;
@@ -160,14 +179,16 @@ public class CWPainterManager : MonoBehaviour
     
     public void FoamActive()
     {
-        /*foamParticles.enabled = true; 
-        waterParticles.enabled = false;
-        fabricPainter.enabled = false; 
-        squeegee.enabled = false;
-        squeegeeSphere.enabled = false;
-        fabricPainterSphere.enabled = false;
-        foamParticlesSphere.enabled = true;
-        waterParticlesSphere.enabled = false;*/
+      
+        
+        ofoamCounter.SetActive(true);
+        owaterCounter.SetActive(false);
+        oglassCounter.SetActive(false);
+        ofabricCounter.SetActive(false); 
+        ofoamCounterText.SetActive(true);
+        owaterCounterText.SetActive(false);
+        oglassCounterText.SetActive(false);
+        ofabricCounterText.SetActive(false);
         
         squeegeeSphere.Radius = 0;
         fabricPainterSphere.Radius=0;
@@ -190,15 +211,19 @@ public class CWPainterManager : MonoBehaviour
     public void WaterActive()
     {
         mainPaintableTexture[0].LocalMaskTexture = null;
-        //foamParticles.enabled = false; 
-       /* waterParticles.enabled = true;
-        fabricPainter.enabled = false; 
-        squeegee.enabled = false;
+       
+       
+        ofoamCounter.SetActive(false);
+        owaterCounter.SetActive(true);
+        oglassCounter.SetActive(false);
+        ofabricCounter.SetActive(false);
         
-        foamParticlesSphere.enabled = true;
-        waterParticlesSphere.enabled = true;
-        squeegeeSphere.enabled = false;
-        fabricPainterSphere.enabled = false;*/
+        ofoamCounterText.SetActive(false);
+        owaterCounterText.SetActive(true);
+        oglassCounterText.SetActive(false);
+        ofabricCounterText.SetActive(false);
+       
+       
        
        squeegeeSphere.Radius = 0;
        fabricPainterSphere.Radius=0;
@@ -219,15 +244,17 @@ public class CWPainterManager : MonoBehaviour
     {
         
         mainPaintableTexture[0].LocalMaskTexture = glassMaskTexture;
-       /* //foamParticles.enabled = false; 
-        //waterParticles.enabled = false;
-        squeegee.enabled = true;
-        fabricPainter.enabled = false;
+      
         
-        foamParticlesSphere.enabled = true;
-        waterParticlesSphere.enabled = true;
-        squeegeeSphere.enabled = true;
-        fabricPainterSphere.enabled = false;*/
+        ofoamCounter.SetActive(false);
+        owaterCounter.SetActive(false);
+        oglassCounter.SetActive(true);
+        ofabricCounter.SetActive(false);
+        
+        ofoamCounterText.SetActive(false);
+        owaterCounterText.SetActive(false);
+        oglassCounterText.SetActive(true);
+        ofabricCounterText.SetActive(false);
        
        squeegeeSphere.Radius =squeegeeRadius;
        fabricPainterSphere.Radius= 0;
@@ -245,17 +272,19 @@ public class CWPainterManager : MonoBehaviour
     public void FabricActive()
     {
         mainPaintableTexture[0].LocalMaskTexture = null;
-      /* //foamParticles.enabled = false; 
-        //waterParticles.enabled = false;
-        //squeegee.enabled = false;
-        fabricPainter.enabled = true;
+
+
+        ofoamCounter.SetActive(false);
+        owaterCounter.SetActive(false);
+        oglassCounter.SetActive(false);
+        ofabricCounter.SetActive(true);
         
-         
-        foamParticlesSphere.enabled = true;
-        waterParticlesSphere.enabled = true;
-        squeegeeSphere.enabled = true;
-        fabricPainterSphere.enabled = true;*/
-      
+        ofoamCounterText.SetActive(false);
+        owaterCounterText.SetActive(false);
+        oglassCounterText.SetActive(false);
+        ofabricCounterText.SetActive(true);
+        
+        
       squeegeeSphere.Radius = squeegeeRadius;
       fabricPainterSphere.Radius = fabricRadius;
       foamParticlesSphere.Radius = foamRadius;
@@ -269,14 +298,7 @@ public class CWPainterManager : MonoBehaviour
     {
         
         mainPaintableTexture[0].LocalMaskTexture = null;
-       // foamParticles.enabled = false; 
-        //waterParticles.enabled = false;
-        //squeegee.enabled = false;
-       // fabricPainter.enabled = false;
-
-       isFabricFinished = true;
-       
-       
+        isFabricFinished = true;
 
     }
     
@@ -292,13 +314,13 @@ public class CWPainterManager : MonoBehaviour
     
     void CheckCounters()
     {
-        if (foamCounter.Total>0 && 1-foamCounter.Ratio >0.70f && !isFoamFinished)
+        if (foamCounter.Total>0 && 1-foamCounter.Ratio >0.90f && !isFoamFinished)
         {  
             Debug.Log("Foam Finished" + foamCounter.Ratio);
             OnFoamFinish();
         }
         
-        if (waterCounter.Total>0 && 1-waterCounter.Ratio >0.70f&& !isWaterFinished && isFoamFinished)
+        if (waterCounter.Total>0 && 1-waterCounter.Ratio >0.90f&& !isWaterFinished && isFoamFinished)
         {
             Debug.Log("Water Finished" + waterCounter.Ratio);
             OnWaterFinish();
@@ -321,11 +343,9 @@ public class CWPainterManager : MonoBehaviour
 
           OnCarFinished();
         }
-        
-        
-        
-        
-        
+
+
+
     }
 
 
