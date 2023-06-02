@@ -5,11 +5,10 @@ using UnityEngine;
 public class CWCarManager : MonoBehaviour
 {
     
-   public Texture dirtTexture;
-   public Texture foamTexture; 
-   public  Texture waterTexture; 
-   public Texture transparent;
-   public Texture mainTexture;
-   public Texture glassMaskTexture;
+   public GameObject [] foamCubes;
+   public GameObject [] waterCubes;
+   public GameObject [] dryerCubes;
+  
+   
     
 }

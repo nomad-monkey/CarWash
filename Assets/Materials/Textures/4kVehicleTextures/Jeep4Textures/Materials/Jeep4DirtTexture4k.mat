@@ -23,7 +23,8 @@ Material:
   m_Name: Jeep4DirtTexture4k
   m_Shader: {fileID: 4800000, guid: d6f550d8415a0c9418e9373a81155d4e, type: 3}
   m_ValidKeywords: []
-  m_InvalidKeywords: []
+  m_InvalidKeywords:
+  - _USE_UV2
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -58,7 +59,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 7a9039e6639129644a2d0d475281b042, type: 3}
+        m_Texture: {fileID: 2800000, guid: 98a10f68c74667c4cbd929244dd17089, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -117,7 +118,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
-    - _UseUV2: 0
+    - _UseUV2: 1
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:

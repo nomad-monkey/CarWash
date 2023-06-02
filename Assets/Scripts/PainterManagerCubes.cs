@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using PaintIn3D;
@@ -6,84 +7,60 @@ using UnityEngine;
 public class PainterManagerCubes : MonoBehaviour
 {
    
-    [SerializeField] private CWCarDefiner currentCar;
+    [SerializeField] private CWCarDefiner carDefiner;
 
-    [SerializeField] private P3dPaintSphere foamParticlesSphere;
-    [SerializeField] private P3dPaintSphere waterParticlesSphere;
-    [SerializeField] private P3dPaintSphere fabricPainterSphere;
-    [SerializeField] private P3dPaintSphere squeegeeSphere;
-    [SerializeField] private Texture transparentTexture;
-   
-    
     [SerializeField] private float foamRadius;
     [SerializeField] private float waterRadius;
-    [SerializeField] private float fabricRadius;
-    [SerializeField] private float squeegeeRadius;
+    [SerializeField] private float dryerRadius;
     
-    
+    private GameObject [] foamCubes;
+    private GameObject [] waterCubes;
+    private GameObject [] dryerCubes;
+
     private P3dPaintableTexture [] mainPaintableTexture;
-    private CWCarManager carManager;
     private GameObject carToWorkOn;
-    private Texture dirtTexture;
-    private Texture foamTexture;
-    private Texture waterTexture;
-    private Texture mainTexture; 
-    private Texture glassMaskTexture;
+    private CWCarManager carManager;
+    
+    
 
-    private bool isFoamFinished;
-    private bool isWaterFinished;
-    private bool isGlassFinished;
-    private bool isFabricFinished;
-    private bool isCarFinished;
-    private bool newCar;
+    public bool isFoamFinished;
+    public bool isWaterFinished;
+    public bool isDryerFinished;
+    public bool isCarFinished;
+
+     public int foamMax;
+    public  int waterMax;
+    public int dryerMax;
 
 
-    public int foamMax;
-    public int waterMax;
-    public int squeegeMax;
-    public int fabricMax;
+    [SerializeField] private P3dPaintSphere dryerSphere;
+    [SerializeField] private P3dPaintSphere waterSphere;
+    [SerializeField] private P3dPaintSphere foamSphere;
+   
+   
     
-    [SerializeField]  CheckCubesTrigger foamTrigger;
-    [SerializeField]  CheckCubesTrigger waterTrigger;
-    [SerializeField]  CheckCubesTrigger  squeegeTrigger;
-    [SerializeField]  CheckCubesTrigger fabricTrigger;
-    
-    
-    
+    [SerializeField] public RayPainting foamPainter;
+    [SerializeField] public RayPainting waterPainter;
+    [SerializeField] public RayPainting dryerPainter;
+
+    private void Awake()
+    {
+    }
+
+
     void Start()
     {
-        newCar = false;
+     
         isFoamFinished = false;
         isWaterFinished = false;
-        isGlassFinished = false;
-        isFabricFinished = false;
-        isCarFinished = false;
+        isDryerFinished = false;
         NewCar();
     }
 
     // Update is called once per frame
     void Update()
     {
-      
         
-        
-     /*   if (!newCar && waterCounter.Count==0)
-        {
-            newCar = false;
-            
-        }
-        else if (!newCar && waterCounter.Count!=0 )
-        {
-          NewCar();
-        }
-
-        if (newCar)
-        {
-            CheckCounters();
-        }
-       */
-     
-     
         CheckCounters();
        
     }
@@ -91,48 +68,49 @@ public class PainterManagerCubes : MonoBehaviour
 
     void NewCar()
     {
-        newCar = true;
         isFoamFinished = false;
         isWaterFinished = false;
-        isGlassFinished = false;
-        isFabricFinished = false;
-        isCarFinished = false;
-        
-        carToWorkOn = currentCar.currentCar;
+        isDryerFinished = false;
        
-        mainPaintableTexture = carToWorkOn.GetComponents<P3dPaintableTexture>();
+        carToWorkOn = carDefiner.currentCar;
+
         carManager= carToWorkOn.GetComponent<CWCarManager>();
 
-        dirtTexture = carManager.dirtTexture;
-        foamTexture = carManager.foamTexture;
-        waterTexture = carManager.waterTexture; 
-        mainTexture = carManager.mainTexture;
-        glassMaskTexture = carManager.glassMaskTexture;
+        dryerCubes = carManager.dryerCubes;
+        waterCubes = carManager.waterCubes;
+        foamCubes = carManager.foamCubes;
 
-       
-        mainPaintableTexture[0].LocalMaskTexture = null;
+        foamMax = foamCubes.Length;
+        waterMax = waterCubes.Length;
+        dryerMax = dryerCubes.Length;
 
+        foreach (GameObject cube in foamCubes)
+        { cube.SetActive(false); }
+        
+        foreach (GameObject cube in waterCubes)
+        { cube.SetActive(false); }
+        
+        foreach (GameObject cube in dryerCubes)
+        { cube.SetActive(false); }
 
-
-        waterParticlesSphere.BlendMode= P3dBlendMode.ReplaceCustom(Color.white, waterTexture, Vector4.one);
-       
+        
         FoamActive();
-
     }
     
     
     public void FoamActive()
     {
 
-        squeegeeSphere.Radius = 0;
-        fabricPainterSphere.Radius=0;
-        foamParticlesSphere.Radius= foamRadius;
-        waterParticlesSphere.Radius = 0;
+        dryerSphere.Radius = 0;
+        waterSphere.Radius=0;
+        foamSphere.Radius= foamRadius;
+      
+        if (foamCubes.Length > 0)
+        {
+            foreach (GameObject cube in foamCubes)
+            { cube.SetActive(true); }
+        }
         
-        
-
-       
-        mainPaintableTexture[0].LocalMaskTexture = null;
     }
 
     public void OnFoamFinish()
@@ -143,67 +121,48 @@ public class PainterManagerCubes : MonoBehaviour
     
     
     public void WaterActive()
-    {
-        mainPaintableTexture[0].LocalMaskTexture = null;
+    { 
+        
+        dryerSphere.Radius=0;
+      foamSphere.Radius= foamRadius;
+      waterSphere.Radius = waterRadius;
       
-       squeegeeSphere.Radius = 0;
-       fabricPainterSphere.Radius=0;
-       foamParticlesSphere.Radius= foamRadius;
-       waterParticlesSphere.Radius = waterRadius;
+      if (waterCubes.Length > 0)
+      {
+          foreach (GameObject cube in waterCubes)
+          { cube.SetActive(true); }
+      }
        
 
     }
     
     
     public void OnWaterFinish()
-    {
-        SqueegeeActive();
+    { 
+        DryerActive();
         isWaterFinished = true;
     }
     
-    public void SqueegeeActive()
+    public void DryerActive()
     {
+        dryerSphere.Radius = dryerRadius;
+        foamSphere.Radius= foamRadius;
+        waterSphere.Radius = waterRadius;
         
-        mainPaintableTexture[0].LocalMaskTexture = glassMaskTexture;
-     
-       squeegeeSphere.Radius =squeegeeRadius;
-       fabricPainterSphere.Radius= 0;
-       foamParticlesSphere.Radius= foamRadius;
-       waterParticlesSphere.Radius = waterRadius;
+        if (dryerCubes.Length > 0)
+        {
+            foreach (GameObject cube in dryerCubes)
+            { cube.SetActive(true); }
+        }
     }
     
-    public void OnGlassFinish()
-    { 
-        FabricActive();
-        isGlassFinished = true; 
-    }
-    
-   
-    public void FabricActive()
+    public void OnDryerFinish()
     {
-        mainPaintableTexture[0].LocalMaskTexture = null;
-        squeegeeSphere.Radius = squeegeeRadius;
-      fabricPainterSphere.Radius = fabricRadius;
-      foamParticlesSphere.Radius = foamRadius;
-      waterParticlesSphere.Radius = waterRadius;
-        
+        isDryerFinished = true;
 
     }
 
-    
-    public void OnFabricFinish()
-    {
-        
-        mainPaintableTexture[0].LocalMaskTexture = null;
-       
 
-       isFabricFinished = true;
-       
-       
-
-    }
-    
-   
     public void OnCarFinished()
     {
         isCarFinished = true; 
@@ -215,30 +174,26 @@ public class PainterManagerCubes : MonoBehaviour
     
     void CheckCounters()
     {
-        if (foamMax==foamTrigger.hitNumber && !isFoamFinished)
+        if (foamMax==foamPainter.hitNumber && !isFoamFinished)
         {  
             Debug.Log("Foam Finished" );
             OnFoamFinish();
         }
         
-        if (  waterMax==waterTrigger.hitNumber  && !isWaterFinished && isFoamFinished )
+        if (  waterMax==waterPainter.hitNumber  && !isWaterFinished && isFoamFinished )
         {
             Debug.Log("Water Finished");
             OnWaterFinish();
         }
         
-        if ( squeegeMax==squeegeTrigger.hitNumber && !isGlassFinished && isWaterFinished && isFoamFinished)
-        {   Debug.Log(" Glass Finished");
-            OnGlassFinish();
+        if ( dryerMax==dryerPainter.hitNumber && !isDryerFinished && isWaterFinished && isFoamFinished)
+        {   Debug.Log("Dryer Finished");
+            OnDryerFinish();
         }
         
-        if (fabricMax == fabricTrigger.hitNumber && !isFabricFinished && isGlassFinished && isWaterFinished && isFoamFinished)
-        {
-            Debug.Log(" Fabric Finished");
-            OnFabricFinish();
-        }
+      
 
-        if (isFoamFinished && isWaterFinished && isGlassFinished && isFabricFinished && !isCarFinished)
+        if (isFoamFinished && isWaterFinished && isDryerFinished && !isCarFinished)
         {
           Debug.Log("Car Finished");
 

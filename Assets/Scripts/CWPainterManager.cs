@@ -75,7 +75,7 @@ public class CWPainterManager : MonoBehaviour
          glassCounter.enabled=false;
          fabricCounter.enabled=false;
     }
-
+    
     void Start()
     {
         newCar = false;
@@ -129,11 +129,11 @@ public class CWPainterManager : MonoBehaviour
         mainPaintableTexture = carToWorkOn.GetComponents<P3dPaintableTexture>();
         carManager= carToWorkOn.GetComponent<CWCarManager>();
 
-        dirtTexture = carManager.dirtTexture;
+        /*dirtTexture = carManager.dirtTexture;
         foamTexture = carManager.foamTexture;
         waterTexture = carManager.waterTexture; 
         mainTexture = carManager.mainTexture;
-        glassMaskTexture = carManager.glassMaskTexture;
+        glassMaskTexture = carManager.glassMaskTexture;*/
 
        
         mainPaintableTexture[0].LocalMaskTexture = null;
