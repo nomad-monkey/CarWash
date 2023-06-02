@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class CheckCubesTrigger : MonoBehaviour
 {
-    public PainterManagerCubes managerCubes;
+    /*public PainterManagerCubes managerCubes;
     public int hitNumber;
     public bool isRaycast;
 
@@ -149,5 +149,5 @@ public class CheckCubesTrigger : MonoBehaviour
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.red);
         }
 
-    }
+    }*/
 }

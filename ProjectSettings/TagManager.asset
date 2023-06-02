@@ -13,13 +13,13 @@ TagManager:
   - UI
   - FoamCube
   - WaterCube
-  - SpongeCube
+  - DryerCube
   - FabricCube
   - CubeChecker
   - Rig
   - Painters
   - Car
-  - 
+  - HitSphere
   - 
   - 
   - 
