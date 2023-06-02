@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using BNG;
@@ -5,33 +6,53 @@ using UnityEngine;
 
 public class SprayPosition : MonoBehaviour
 {
-
-    [SerializeField] private Transform leftHand;
-    [SerializeField] private Transform foamGun;
-    [SerializeField] private Transform rightHand;
-    [SerializeField] private Transform waterGun;
+    [SerializeField] private Grabbable _grabbable;
+    
+    [SerializeField] private Transform initTransform;
+    
+    [SerializeField] float interval;
+    
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        initTransform = transform.transform;
+        transform.GetComponent<Rigidbody>().useGravity = false;
+
+    }
+
+    private void FixedUpdate()
+    {
+       interval += Time.deltaTime;
+       Debug.Log(interval);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (InputBridge.Instance.BButtonDown)
+        if (interval % 5 == 0)
         {
+            
+            if (!_grabbable.BeingHeld && transform.position != initTransform.position )
+            {
+                transform.position = initTransform.position;
+                transform.rotation = initTransform.rotation;
 
-            waterGun.transform.position = rightHand.position;
+                transform.GetComponent<Rigidbody>().useGravity = false;
+
+
+            }
+
+            if (_grabbable.BeingHeld)
+            {
+                transform.GetComponent<Rigidbody>().useGravity = true;
            
-        }
-        
-        
-        if (InputBridge.Instance.XButtonDown)
-        {
-
-            waterGun.transform.position = rightHand.position;
+            }
+            
+            
             
         }
+       
+          
+      
     }
 }
