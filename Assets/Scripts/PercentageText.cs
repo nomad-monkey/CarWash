@@ -10,11 +10,15 @@ public class PercentageText : MonoBehaviour
    [SerializeField] private Text taskName;
    [SerializeField] private Text percentageText;
 
+   [SerializeField] private GameObject nextCarButton;
+
    
  
    
    private void Update()
    {
+      nextCarButton.SetActive(painterManager.isCarFinished);
+      
       if (!painterManager.isFoamFinished && !painterManager.isWaterFinished && !painterManager.isDryerFinished && !painterManager.isCarFinished)
       {
 
