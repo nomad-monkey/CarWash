@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4ce1fe34fa40fd94783f814ac87c8482
+guid: a31f81fc62cb4e64eb9a86338847345f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -102,14 +102,14 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 8192
+    maxTextureSize: 512
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 50
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -140,85 +140,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WaterSprayParticleSprites_0
+      name: WaterSprayParticleSprites3_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 0
-        width: 124
-        height: 513
+        x: 0
+        y: 258
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89f49ad81e6563249b484224abc37b93
-      internalID: -1075450570
+      spriteID: a9eab45b07d78de40a3ba1ea4c2616bc
+      internalID: 1775421206
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WaterSprayParticleSprites_1
+      name: WaterSprayParticleSprites3_1
       rect:
         serializedVersion: 2
-        x: 146
-        y: 0
-        width: 124
-        height: 513
+        x: 256
+        y: 258
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75ed9a2fe10cd434ba2f52cdfe6653f6
-      internalID: 309709437
+      spriteID: 2f1145c53d68843419066ea07a21a493
+      internalID: -2132229789
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WaterSprayParticleSprites_2
+      name: WaterSprayParticleSprites3_2
       rect:
         serializedVersion: 2
-        x: 289
-        y: 0
-        width: 124
-        height: 513
+        x: 0
+        y: 2
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45e5602f69825b144848771955d0fa3d
-      internalID: 1600583939
+      spriteID: 433cdbfbc702388439330b2d9a3ea5cb
+      internalID: 1137476678
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WaterSprayParticleSprites_3
+      name: WaterSprayParticleSprites3_3
       rect:
         serializedVersion: 2
-        x: 433
-        y: 0
-        width: 122
-        height: 513
+        x: 256
+        y: 2
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4deb3904d77a988469718d3640c5bbaa
-      internalID: 298875475
+      spriteID: 5e216b62607f01146a6e58786025f55b
+      internalID: -2129810241
       vertices: []
       indices: 
       edges: []
@@ -226,7 +226,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: f69f8597b45025544a1664503f49d912
+    spriteID: f5caa20410ea2da4da883c5950305dcd
     internalID: 0
     vertices: []
     indices: 
@@ -234,10 +234,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      WaterSprayParticleSprites_1: 309709437
-      WaterSprayParticleSprites_3: 298875475
-      WaterSprayParticleSprites_0: -1075450570
-      WaterSprayParticleSprites_2: 1600583939
+      WaterSprayParticleSprites3_3: -2129810241
+      WaterSprayParticleSprites3_0: 1775421206
+      WaterSprayParticleSprites3_2: 1137476678
+      WaterSprayParticleSprites3_1: -2132229789
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
