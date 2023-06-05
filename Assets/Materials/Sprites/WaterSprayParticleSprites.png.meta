@@ -143,12 +143,12 @@ TextureImporter:
       name: WaterSprayParticleSprites_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 3
         y: 0
-        width: 124.5
+        width: 124
         height: 513
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -164,12 +164,12 @@ TextureImporter:
       name: WaterSprayParticleSprites_1
       rect:
         serializedVersion: 2
-        x: 139
+        x: 146
         y: 0
-        width: 124.5
+        width: 124
         height: 513
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -185,12 +185,12 @@ TextureImporter:
       name: WaterSprayParticleSprites_2
       rect:
         serializedVersion: 2
-        x: 278
+        x: 289
         y: 0
-        width: 124.5
+        width: 124
         height: 513
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -206,12 +206,12 @@ TextureImporter:
       name: WaterSprayParticleSprites_3
       rect:
         serializedVersion: 2
-        x: 417
+        x: 433
         y: 0
-        width: 124.5
+        width: 122
         height: 513
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
