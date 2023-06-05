@@ -28,7 +28,7 @@ public class PainterManagerCubes : MonoBehaviour
     public bool isDryerFinished;
     public bool isCarFinished;
 
-     public int foamMax;
+    public int foamMax;
     public  int waterMax;
     public int dryerMax;
 
@@ -66,7 +66,7 @@ public class PainterManagerCubes : MonoBehaviour
     }
 
 
-    void NewCar()
+    public void NewCar()
     {
         isFoamFinished = false;
         isWaterFinished = false;
