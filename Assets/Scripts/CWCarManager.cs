@@ -5,9 +5,9 @@ using UnityEngine;
 public class CWCarManager : MonoBehaviour
 {
     
-   public GameObject [] foamCubes;
-   public GameObject [] waterCubes;
-   public GameObject [] dryerCubes;
+   public List <GameObject> foamCubes;
+   public List <GameObject>waterCubes;
+   public  List <GameObject> dryerCubes;
   
    
     
