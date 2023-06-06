@@ -19,7 +19,7 @@ public class CWCarDefiner : MonoBehaviour
   private void Awake()
   {
      
-      carNo = 0;
+      carNo = 1;
 
       foreach (GameObject car in cars)
       {

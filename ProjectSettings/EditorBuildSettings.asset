@@ -8,9 +8,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/BasicSceneMethod1.unity
     guid: 8d92929c6ef0ef543a6f077ea0e00937
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/BasicSceneMethod2.unity
     guid: cb9d73799f3f6bc418342f8d6c99d9b0
+  - enabled: 1
+    path: Assets/MainScenes/Level2.unity
+    guid: b3ed7d7466a5f1e409cd723db3cde5d3
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 26d99c6540791de4d9deafd82f2f0158, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 14c3dbc6ad5269842875abae6c3035bf, type: 2}
