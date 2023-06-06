@@ -10,7 +10,8 @@ Material:
   m_Name: DirtMaterial
   m_Shader: {fileID: 4800000, guid: d6f550d8415a0c9418e9373a81155d4e, type: 3}
   m_ValidKeywords: []
-  m_InvalidKeywords: []
+  m_InvalidKeywords:
+  - _USE_UV2
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -104,7 +105,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
-    - _UseUV2: 0
+    - _UseUV2: 1
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:

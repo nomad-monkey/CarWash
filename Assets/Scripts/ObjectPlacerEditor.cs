@@ -56,6 +56,10 @@ public class ObjectPlacerEditor : Editor
         }
         
         
+        if(GUILayout.Button("New Car"))
+        {
+            myScript.NewCar();
+        }
         
 
         

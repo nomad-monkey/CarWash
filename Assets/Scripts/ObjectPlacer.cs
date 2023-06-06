@@ -10,11 +10,13 @@ public class ObjectPlacer : MonoBehaviour
    
     [SerializeField] private LayerMask cubeMask;
     [SerializeField] private Transform yCorrector;
+    [SerializeField] private Transform yCorrectorUp;
     [SerializeField] private Transform car;
     [SerializeField] private float upper;
     [SerializeField] private float lower;
     [SerializeField] private GameObject cube;
-
+   
+    [SerializeField] private bool isCarHigh;
     [SerializeField] private List<GameObject> foamCubeList;
     [SerializeField] private List<GameObject> waterCubeList;
     [SerializeField] private List<GameObject> dryerCubeList;
@@ -198,22 +200,34 @@ public class ObjectPlacer : MonoBehaviour
         carManager.waterCubes = waterCubeList;
         carManager.dryerCubes = dryerCubeList;
     }
-    
-    
-    
-    public void CleanCubes()
+
+    public void NewCar()
+    {
+        foamCubeList.Clear();
+        foamCubeList.Capacity = 0;
+        waterCubeList.Clear();
+        waterCubeList.Capacity = 0;
+        dryerCubeList.Clear();
+        dryerCubeList.Capacity = 0;
+
+
+    }
+
+        public void CleanCubes()
     {
         
         foreach (GameObject cube  in  foamCubeList)
         {
            DestroyImmediate(cube);
            foamCubeList = new List<GameObject>();
+           foamCubeList.Capacity = 0;
 
         }
         foreach (GameObject cube  in  waterCubeList)
         {
             DestroyImmediate(cube);
             waterCubeList = new List<GameObject>();
+            waterCubeList.Capacity = 0;
 
         }
 
@@ -221,6 +235,7 @@ public class ObjectPlacer : MonoBehaviour
         {
             DestroyImmediate(cube);
             dryerCubeList = new List<GameObject>();
+            dryerCubeList.Capacity = 0;
 
         }
         
@@ -236,7 +251,7 @@ public class ObjectPlacer : MonoBehaviour
     public void PlaceRandomObjects()
     {
 
-        for (int i = 0; i < 100; i++)
+        for (int i = 0; i < 50; i++)
         {
             bool collisionWithOtherCube = false;
           
@@ -254,14 +269,14 @@ public class ObjectPlacer : MonoBehaviour
                 newCube.transform.position = hitPoint.point;
                 Debug.Log("Hit");
                 
-                if (newCube.transform.position.y < yCorrector.position.y  )
+                if ( (newCube.transform.position.y < yCorrector.position.y) || (isCarHigh && newCube.transform.position.y > yCorrectorUp.position.y))
                 {
                     DestroyImmediate(newCube);
                             
                 }
                 else
                 {
-                    Collider[] hitColliders = Physics.OverlapSphere(newCube.transform.position, 0.25f);
+                    Collider[] hitColliders = Physics.OverlapSphere(newCube.transform.position, 0.5f);
 
                     if (hitColliders.Length > 0)
                     {
@@ -281,8 +296,6 @@ public class ObjectPlacer : MonoBehaviour
                         {
                             Debug.Log("Added");
                             foamCubeList.Add(newCube);
-
-                        
                         }
 
                     }

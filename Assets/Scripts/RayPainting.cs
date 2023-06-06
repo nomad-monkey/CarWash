@@ -10,10 +10,12 @@ public class RayPainting : MonoBehaviour
 
     [SerializeField] private Grabbable _grabbable;
     
+    [SerializeField] private float rayDistance;
     [SerializeField] private GameObject hitPainter;
     
     [SerializeField] private int _layerMask;
 
+    [SerializeField] private Vector3 rayDirection;
     public int hitNumber;
     private void FixedUpdate()
     {
@@ -33,7 +35,7 @@ public class RayPainting : MonoBehaviour
                 RaycastHit hitInfo;
 
 
-                if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.right), out hitInfo,Mathf.Infinity))
+                if(Physics.Raycast(transform.position, transform.TransformDirection(rayDirection), out hitInfo, rayDistance))
                 {
                     Debug.Log("hit");
                     hitPainter.SetActive(true);
