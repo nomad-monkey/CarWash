@@ -23,13 +23,14 @@ public class PercentageText : MonoBehaviour
       {
 
          taskName.text = "Foam";
-         percentageText.text = painterManager.foamPainter.hitNumber + "/" + painterManager.foamMax ;
+         
+         percentageText.text =  "%" + (painterManager.foamPainter.hitNumber*100/painterManager.foamMax ) ;
       }
       else if (painterManager.isFoamFinished && !painterManager.isWaterFinished && !painterManager.isDryerFinished &&
                !painterManager.isCarFinished)
       {
          taskName.text = "Water";
-         percentageText.text = painterManager.waterPainter.hitNumber + "/" + painterManager.waterMax ;
+         percentageText.text =  "%" + (100*painterManager.waterPainter.hitNumber/ painterManager.waterMax);
       }
       
       else if (painterManager.isFoamFinished && painterManager.isWaterFinished && !painterManager.isDryerFinished &&
@@ -37,7 +38,7 @@ public class PercentageText : MonoBehaviour
       {
          
          taskName.text = "Dryer";
-         percentageText.text = painterManager.dryerPainter.hitNumber + "/" + painterManager.dryerMax ; 
+         percentageText.text = "%"+ (100*painterManager.dryerPainter.hitNumber / painterManager.dryerMax) ; 
       }
       
       
