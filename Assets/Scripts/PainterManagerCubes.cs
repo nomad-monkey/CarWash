@@ -13,9 +13,9 @@ public class PainterManagerCubes : MonoBehaviour
     [SerializeField] private float waterRadius;
     [SerializeField] private float dryerRadius;
     
-    private GameObject [] foamCubes;
-    private GameObject [] waterCubes;
-    private GameObject [] dryerCubes;
+    private List <GameObject> foamCubes;
+    private List <GameObject>waterCubes;
+    private List <GameObject> dryerCubes;
 
     private P3dPaintableTexture [] mainPaintableTexture;
     private GameObject carToWorkOn;
@@ -80,9 +80,9 @@ public class PainterManagerCubes : MonoBehaviour
         waterCubes = carManager.waterCubes;
         foamCubes = carManager.foamCubes;
 
-        foamMax = foamCubes.Length;
-        waterMax = waterCubes.Length;
-        dryerMax = dryerCubes.Length;
+        foamMax = foamCubes.Count;
+        waterMax = waterCubes.Count;
+        dryerMax = dryerCubes.Count;
 
         foreach (GameObject cube in foamCubes)
         { cube.SetActive(false); }
@@ -105,7 +105,7 @@ public class PainterManagerCubes : MonoBehaviour
         waterSphere.Radius=0;
         foamSphere.Radius= foamRadius;
       
-        if (foamCubes.Length > 0)
+        if (foamCubes.Count > 0)
         {
             foreach (GameObject cube in foamCubes)
             { cube.SetActive(true); }
@@ -127,7 +127,7 @@ public class PainterManagerCubes : MonoBehaviour
       foamSphere.Radius= foamRadius;
       waterSphere.Radius = waterRadius;
       
-      if (waterCubes.Length > 0)
+      if (waterCubes.Count> 0)
       {
           foreach (GameObject cube in waterCubes)
           { cube.SetActive(true); }
@@ -149,7 +149,7 @@ public class PainterManagerCubes : MonoBehaviour
         foamSphere.Radius= foamRadius;
         waterSphere.Radius = waterRadius;
         
-        if (dryerCubes.Length > 0)
+        if (dryerCubes.Count> 0)
         {
             foreach (GameObject cube in dryerCubes)
             { cube.SetActive(true); }

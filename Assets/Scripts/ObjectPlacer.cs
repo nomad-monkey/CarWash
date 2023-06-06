@@ -1,62 +1,95 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using PaintIn3D;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ObjectPlacer : MonoBehaviour
 {
-
-    [SerializeField] private int layerMask;
+   
+    [SerializeField] private LayerMask cubeMask;
+    [SerializeField] private Transform yCorrector;
     [SerializeField] private Transform car;
     [SerializeField] private float upper;
     [SerializeField] private float lower;
     [SerializeField] private GameObject cube;
 
     [SerializeField] private List<GameObject> foamCubeList;
+    [SerializeField] private List<GameObject> waterCubeList;
+    [SerializeField] private List<GameObject> dryerCubeList;
+    
+    [SerializeField] private Material dirtMaterial;
 
-    public void PlaceObjects()
+    private CWCarManager carManager;
+
+    private GameObject foamParent;
+    private GameObject dryerParent;
+    private GameObject waterParent;
+
+    
+   
+
+    public void AddComponents()
     {
-        Vector3[] meshPoints = car.GetComponent<MeshFilter>().sharedMesh.vertices;
-        // Vector3[] meshPoints = car.GetComponent<MeshFilter>().mesh.vertices;
-        // int[] tris = car.GetComponent<MeshFilter>().mesh.triangles;
-        int[] tris = car.GetComponent<MeshFilter>().sharedMesh.triangles;
-        Debug.Log(tris.Length);
-        int triStart = Random.Range(0, meshPoints.Length / 3) * 3; // get first index of each triangle
 
-        float a = Random.value;
-        float b = Random.value;
+        MeshCollider meshCollider = car.GetComponent<MeshCollider>();
 
-        if (a + b >= 1)
+        if (!meshCollider)
         {
-            // reflect back if > 1
-            a = 1 - a;
-            b = 1 - b;
+            meshCollider = car.AddComponent<MeshCollider>();
+        }
+        
+        
+        P3dPaintable paintable = car.GetComponent<P3dPaintable>();
+
+        if (!paintable)
+        {
+            paintable=  car.AddComponent<P3dPaintable>();
+        }
+        
+        P3dMaterialCloner cloner = car.GetComponent<P3dMaterialCloner>();
+
+        if (!cloner )
+        {
+            cloner= car.AddComponent<P3dMaterialCloner>();
+            
+        }
+        cloner.Index = 1; 
+        
+        P3dPaintableTexture paintableTexture = car.GetComponent<P3dPaintableTexture>();
+
+        if (paintableTexture  == null)
+        {
+            paintableTexture = car.AddComponent<P3dPaintableTexture>();
         }
 
-        Vector3 newPointOnMesh = meshPoints[triStart] + (a * (meshPoints[triStart + 1] - meshPoints[triStart])) +
-                                 (b * (meshPoints[triStart + 2] -
-                                       meshPoints[triStart])); // apply formula to get new random point inside triangle
+        paintableTexture.Coord = P3dCoord.Second;
 
-        newPointOnMesh = car.TransformPoint(newPointOnMesh); // convert back to worldspace
+        paintableTexture.Slot = new P3dSlot(1, "_MainTex");
+        
+        
+        MeshRenderer renderer = car.GetComponent<MeshRenderer>();
 
-        for (int i = 0; i < 100; i++)
+        if (renderer != null)
         {
-
-            float r = Random.Range(upper, lower);
-            Debug.Log(r);
-            Vector3 rayOrigin = ((Random.onUnitSphere * r) + car.position); // put the ray randomly around the transform
-            RaycastHit hitPoint;
-            Physics.Raycast(rayOrigin, newPointOnMesh - rayOrigin, out hitPoint, 100f, layerMask);
-            GameObject newCube = Instantiate(cube, hitPoint.point, Quaternion.identity);
-
-            foamCubeList.Add(newCube);
-
+            renderer.sharedMaterials[0] = renderer.sharedMaterials[0];
+            renderer.sharedMaterials[1] = dirtMaterial;
         }
+       
+        car.gameObject.layer = 13;
 
+        carManager = car.GetComponent<CWCarManager>();
 
+        if (carManager  == null)
+        {
+            carManager = car.AddComponent<CWCarManager>();
+        }
+        
+        
     }
 
-    public void PlaceObjects2()
+    public void PlaceFoamObjects()
     {
 
 
@@ -98,8 +131,181 @@ public class ObjectPlacer : MonoBehaviour
             }
         }
 
+    }
+    
+    public void CreateParentObjects ()
+    {
+        GameObject objToSpawn = new GameObject();
+        waterParent = Instantiate(objToSpawn, car.position,car.rotation,car);
+        waterParent.name = "waterParent";
+        
+         dryerParent = Instantiate(objToSpawn, car.position,car.rotation,car);
+        dryerParent.name ="dryerParent";
+        
+       foamParent = Instantiate(objToSpawn, car.position,car.rotation,car);
+        foamParent.name ="foamParent";
+        
+    }
 
+    public void SetFirstObjects()
+    {
+        foreach (GameObject cube  in  foamCubeList)
+        {
+            cube.GetComponent<BoxCollider>().isTrigger = true;
+            cube.GetComponent<MeshRenderer>().enabled = false;
+            cube.layer = 6;
+            cube.transform.SetParent(foamParent.transform);
+            cube.name = "FoamCube";
 
+        }
+        
+        
+    }
+    
+    
+    public void CopyFirstObjects()
+    {
+        foreach (GameObject cube  in  foamCubeList)
+        {
+            GameObject newCube=  Instantiate(cube,cube.transform.position,cube.transform.rotation);
+            waterCubeList.Add(newCube);
+            newCube.GetComponent<BoxCollider>().isTrigger = true;
+            newCube.GetComponent<MeshRenderer>().enabled = false;
+            newCube.layer = 7;
+            newCube.transform.SetParent(waterParent.transform);
+            newCube.name = "WaterCube";
+
+        }
+        
+        foreach (GameObject cube  in  foamCubeList)
+        {
+            GameObject newCube = Instantiate(cube,cube.transform.position,cube.transform.rotation);
+            dryerCubeList.Add(newCube);
+            newCube.GetComponent<BoxCollider>().isTrigger = true;
+            newCube.GetComponent<MeshRenderer>().enabled = false;
+            newCube.layer = 8;
+            newCube.transform.SetParent(dryerParent.transform);
+            newCube.name = "DryerCube";
+
+        }
+        
+        
+    }
+
+    public void AssignCubesToCar()
+    {
+        carManager.foamCubes = foamCubeList;
+        carManager.waterCubes = waterCubeList;
+        carManager.dryerCubes = dryerCubeList;
+    }
+    
+    
+    
+    public void CleanCubes()
+    {
+        
+        foreach (GameObject cube  in  foamCubeList)
+        {
+           DestroyImmediate(cube);
+           foamCubeList = new List<GameObject>();
+
+        }
+        foreach (GameObject cube  in  waterCubeList)
+        {
+            DestroyImmediate(cube);
+            waterCubeList = new List<GameObject>();
+
+        }
+
+        foreach (GameObject cube  in  dryerCubeList)
+        {
+            DestroyImmediate(cube);
+            dryerCubeList = new List<GameObject>();
+
+        }
+        
+        carManager.foamCubes = foamCubeList;
+        carManager.waterCubes = waterCubeList;
+        carManager.dryerCubes = dryerCubeList;
+    }
+    
+    
+    
+
+    
+    public void PlaceRandomObjects()
+    {
+
+        for (int i = 0; i < 100; i++)
+        {
+            bool collisionWithOtherCube = false;
+          
+            GameObject newCube = Instantiate(cube, (Random.onUnitSphere * 7f) + car.position, Quaternion.identity);
+
+            Vector3 direction = (car.position - newCube.transform.position).normalized;
+            Debug.Log(direction);
+            RaycastHit hitPoint;
+            Physics.Raycast(newCube.transform.position, direction, out hitPoint, Mathf.Infinity);
+
+            Debug.DrawRay(newCube.transform.position, direction, Color.blue);
+
+            if (hitPoint.transform != null && hitPoint.transform.gameObject.layer == 13)
+            {
+                newCube.transform.position = hitPoint.point;
+                Debug.Log("Hit");
+                
+                if (newCube.transform.position.y < yCorrector.position.y  )
+                {
+                    DestroyImmediate(newCube);
+                            
+                }
+                else
+                {
+                    Collider[] hitColliders = Physics.OverlapSphere(newCube.transform.position, 0.25f);
+
+                    if (hitColliders.Length > 0)
+                    {
+                        foreach (Collider collider in hitColliders)
+                        {
+                            if (collider.gameObject.layer == 15)
+                            {
+                                Debug.Log("Cube");
+                                collisionWithOtherCube = true;
+                            }
+                        }
+
+                        if (collisionWithOtherCube)
+                            // Debug.Log("Added");
+                            DestroyImmediate(newCube);
+                        else
+                        {
+                            Debug.Log("Added");
+                            foamCubeList.Add(newCube);
+
+                        
+                        }
+
+                    }
+                    else
+                    {
+                        Debug.Log("Added");
+                        foamCubeList.Add(newCube);
+                    }
+                    
+                }
+
+                
+            }
+            else
+            {
+                Debug.Log("NoHit");
+                DestroyImmediate(newCube);
+            }
+
+        }
 
     }
+
+    
+   
 }

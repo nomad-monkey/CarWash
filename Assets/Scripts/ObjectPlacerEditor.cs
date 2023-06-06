@@ -14,16 +14,50 @@ public class ObjectPlacerEditor : Editor
     {
         DrawDefaultInspector();
         
+      
+        
         ObjectPlacer myScript = (ObjectPlacer)target;
         
-        if(GUILayout.Button("Spawn First Objects"))
+        if(GUILayout.Button("AddComponents"))
         {
-            myScript.PlaceObjects2();
+            myScript.AddComponents();
+        }
+        
+        if(GUILayout.Button("Create Parent Objects"))
+        {
+            myScript.CreateParentObjects();
+        }
+      
+        if(GUILayout.Button("Random Cubes"))
+        {
+            myScript.PlaceRandomObjects();
+        }
+     
+        
+        if(GUILayout.Button("Set First Cubes"))
+        {
+            myScript.SetFirstObjects();
+        }
+        
+        if(GUILayout.Button("Copy Objects to Other Lists"))
+        {
+            myScript.CopyFirstObjects();
+        }
+
+        if(GUILayout.Button("Set Car Manager"))
+        {
+            myScript.AssignCubesToCar();
         }
         
         
-       
+        if(GUILayout.Button("Remove Cubes"))
+        {
+            myScript.CleanCubes();
+        }
         
+        
+        
+
         
        
     }
