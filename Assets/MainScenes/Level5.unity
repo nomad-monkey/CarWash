@@ -20524,21 +20524,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8113070222290861638, guid: 8a81d84376ef96c47823c5e3e6221e1b, type: 3}
   m_PrefabInstance: {fileID: 1265229882}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1265229885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1265229884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76b1c6bd25f8e9940b3fef1a45af2030, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  foamCubes: []
-  waterCubes: []
-  dryerCubes: []
 --- !u!1001 &1270508574
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20618,21 +20603,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7963477879918346097, guid: c937020e96ee1f4489ac4de6bf8d590a, type: 3}
   m_PrefabInstance: {fileID: 1270508574}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1270508577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1270508576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76b1c6bd25f8e9940b3fef1a45af2030, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  foamCubes: []
-  waterCubes: []
-  dryerCubes: []
 --- !u!1001 &1278059275
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24167,21 +24137,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6534329224095562332, guid: 1e4882c82c37efc40b7beaaff3e26687, type: 3}
   m_PrefabInstance: {fileID: 1692279438}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1692279441
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1692279440}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76b1c6bd25f8e9940b3fef1a45af2030, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  foamCubes: []
-  waterCubes: []
-  dryerCubes: []
 --- !u!1 &1704494008
 GameObject:
   m_ObjectHideFlags: 0
@@ -25522,21 +25477,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2117887446269179703, guid: 58788f28b795d1c499ba138ed6f82fbf, type: 3}
   m_PrefabInstance: {fileID: 1810363968}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1810363971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1810363970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76b1c6bd25f8e9940b3fef1a45af2030, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  foamCubes: []
-  waterCubes: []
-  dryerCubes: []
 --- !u!1001 &1810512364
 PrefabInstance:
   m_ObjectHideFlags: 0

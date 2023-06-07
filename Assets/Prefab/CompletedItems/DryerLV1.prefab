@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 4200296195159298752}
   - component: {fileID: 4200296195159298753}
   - component: {fileID: 4200296195159298754}
+  - component: {fileID: 4723784804406439966}
+  - component: {fileID: 2600488358737248045}
   m_Layer: 0
   m_Name: DryerLV1
   m_TagString: Untagged
@@ -138,6 +140,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.2119596, y: 0.067312986, z: 0.31160492}
   m_Center: {x: 0.00000011920929, y: 0.000000014901161, z: 0}
+--- !u!114 &4723784804406439966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4200296195159298755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bf056c6a3c5d3844912dc06d0a30eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Scale: 0.5
+--- !u!114 &2600488358737248045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4200296195159298755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68580eca541a3354a9d7d03f45337fc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _grabbable: {fileID: 4200296195159298752}
+  rayDistance: 0
+  hitPainter: {fileID: 0}
+  _layerMask: 0
+  rayDirection: {x: 0, y: 0, z: 0}
+  hitNumber: 0
 --- !u!1 &4200296195812263899
 GameObject:
   m_ObjectHideFlags: 0
