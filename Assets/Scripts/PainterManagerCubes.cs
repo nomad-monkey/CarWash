@@ -71,6 +71,7 @@ public class PainterManagerCubes : MonoBehaviour
         isFoamFinished = false;
         isWaterFinished = false;
         isDryerFinished = false;
+        isCarFinished = false;
        
         carToWorkOn = carDefiner.currentCar;
 

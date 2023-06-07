@@ -19,18 +19,18 @@ public class CWCarDefiner : MonoBehaviour
 
   private void Awake()
   {
-      carNo = 1;
+      
       PlayerPrefs.SetString("ActiveScene", SceneManager.GetActiveScene().name);
       PlayerPrefs.Save();
 
-   /*   if (PlayerPrefs.HasKey("ActiveCar"))
+    if (PlayerPrefs.HasKey("ActiveCar"))
       {
           carNo = PlayerPrefs.GetInt("ActiveCar");
       }
       else
       {
           carNo = 0;
-      }*/
+      }
      
       
 
