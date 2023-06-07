@@ -7,7 +7,7 @@ using UnityEngine;
 public class PainterManagerCubes : MonoBehaviour
 {
    
-    [SerializeField] private CWCarDefiner carDefiner;
+    [SerializeField] public CWCarDefiner carDefiner;
 
     [SerializeField] private float foamRadius;
     [SerializeField] private float waterRadius;

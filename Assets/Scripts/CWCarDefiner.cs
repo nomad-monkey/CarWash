@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CWCarDefiner : MonoBehaviour
 {
@@ -10,16 +11,28 @@ public class CWCarDefiner : MonoBehaviour
 
    public GameObject[] cars;
 
-   [SerializeField] private int carNo;
+   public int carNo;
    
    [SerializeField] PainterManagerCubes _painterManager;
    
-
+   [SerializeField] private string nextLevel;
 
   private void Awake()
   {
+      
+      PlayerPrefs.SetString("ActiveScene", SceneManager.GetActiveScene().name);
+      PlayerPrefs.Save();
+
+      if (PlayerPrefs.HasKey("ActiveCar"))
+      {
+          carNo = PlayerPrefs.GetInt("ActiveCar");
+      }
+      else
+      {
+          carNo = 0;
+      }
      
-      carNo = 0;
+      
 
       foreach (GameObject car in cars)
       {
@@ -47,27 +60,23 @@ public class CWCarDefiner : MonoBehaviour
            currentCar = cars[carNo];
            
            _painterManager.NewCar();
-       }
-       
-       else
-       {
-           carNo = 0;
+          
+           PlayerPrefs.SetInt("ActiveCar", carNo);
+           PlayerPrefs.Save();
            
-           foreach (GameObject car in cars)
-           {
-               car.SetActive(false);
-           }
-      
-           cars[carNo].SetActive(true);
-           
-           currentCar = cars[carNo];
-           
-           _painterManager.NewCar();
        }
        
        
-      
-      
+
+   }
+
+   public void NewLevel()
+
+   {
+       SceneManager.LoadScene(nextLevel);
+
+
+
    }
 
 
