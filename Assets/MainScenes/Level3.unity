@@ -19010,18 +19010,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: WaterLV3
       objectReference: {fileID: 0}
-    - target: {fileID: 1448668603353905143, guid: bbbf50f719800014981a1c5446afd30a, type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6259635216282143416, guid: bbbf50f719800014981a1c5446afd30a, type: 3}
-      propertyPath: m_Name
-      value: WaterLV3Sphere (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6308686749071987599, guid: bbbf50f719800014981a1c5446afd30a, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbbf50f719800014981a1c5446afd30a, type: 3}
 --- !u!4 &1203073469 stripped
