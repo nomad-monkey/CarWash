@@ -10252,7 +10252,6 @@ GameObject:
   - component: {fileID: 2767026639141312821}
   - component: {fileID: 1066480649}
   - component: {fileID: 548690742}
-  - component: {fileID: 548690741}
   m_Layer: 0
   m_Name: FoamLV1
   m_TagString: Untagged
@@ -10279,6 +10278,7 @@ Transform:
   - {fileID: 811152334}
   - {fileID: 410553096}
   - {fileID: 4774130740780759173}
+  - {fileID: 700375782728280471}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10569,25 +10569,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Scale: 0.5
---- !u!114 &548690741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2767026639141312823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68580eca541a3354a9d7d03f45337fc8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _grabbable: {fileID: 2767026639141312819}
-  rayDistance: 2
-  hitPainter: {fileID: 9021824225529191017}
-  _layerMask: 6
-  rayDirection: {x: 1, y: 0, z: 0}
-  isDryerSponge: 0
-  hitNumber: 0
 --- !u!1 &2767026639482288759
 GameObject:
   m_ObjectHideFlags: 0
@@ -10620,6 +10601,58 @@ Transform:
   m_Father: {fileID: 2767026639141312820}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5930345875734790974
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 700375782728280471}
+  - component: {fileID: 7365549533432141548}
+  m_Layer: 0
+  m_Name: RayPainter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &700375782728280471
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5930345875734790974}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.0008, y: 0.02, z: 0.1521}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2767026639141312820}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7365549533432141548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5930345875734790974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68580eca541a3354a9d7d03f45337fc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _grabbable: {fileID: 2767026639141312819}
+  rayDistance: 1.5
+  hitPainter: {fileID: 9021824225529191017}
+  _layerMask: 6
+  rayDirection: {x: 1, y: 0, z: 0}
+  isDryerSponge: 0
+  _sprite: {fileID: 0}
+  hitNumber: 0
 --- !u!1 &9021824225529191017
 GameObject:
   m_ObjectHideFlags: 0
@@ -10648,8 +10681,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9021824225529191017}
   m_LocalRotation: {x: -0.015400773, y: 0.7069391, z: -0.015400773, w: -0.7069391}
-  m_LocalPosition: {x: 13.500966, y: 0.6466, z: 0.099598706}
-  m_LocalScale: {x: 0.07307432, y: 0.07307431, z: 0.07307431}
+  m_LocalPosition: {x: -0.0106, y: 0.0212, z: 0.1657}
+  m_LocalScale: {x: 0.052405976, y: 0.052405972, z: 0.052405972}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2767026639141312820}

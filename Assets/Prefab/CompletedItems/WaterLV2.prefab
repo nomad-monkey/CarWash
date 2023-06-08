@@ -10619,14 +10619,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6853339279942332745}
-  m_LocalRotation: {x: 0.000000029802322, y: -0, z: -0.3161412, w: 0.9487122}
-  m_LocalPosition: {x: 0.2182, y: -0.45, z: 0}
+  m_LocalRotation: {x: 0.025098497, y: 0.0009696506, z: -0.35492438, w: 0.93455756}
+  m_LocalPosition: {x: 0.2537, y: -0.1218, z: 0.0181}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5972488092948380187}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -36.859}
+  m_LocalEulerAnglesHint: {x: 2.728, y: -0.918, z: -41.613}
 --- !u!114 &2879856711004511023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10640,11 +10640,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _grabbable: {fileID: 5972488092948380184}
-  rayDistance: 3
+  rayDistance: 1.5
   hitPainter: {fileID: 5529112590992873156}
   _layerMask: 7
   rayDirection: {x: 1, y: 0, z: 0}
   isDryerSponge: 0
+  _sprite: {fileID: 0}
   hitNumber: 0
 --- !u!1 &7537023076817064756
 GameObject:
