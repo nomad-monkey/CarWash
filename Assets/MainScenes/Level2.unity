@@ -62269,14 +62269,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1737300961}
     m_Modifications:
-    - target: {fileID: 340298844, guid: 112492ca6b39ce94a9a269b8685ebaa8, type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1620723896, guid: 112492ca6b39ce94a9a269b8685ebaa8, type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5972488092948380186, guid: 112492ca6b39ce94a9a269b8685ebaa8, type: 3}
       propertyPath: m_Name
       value: WaterLV2
