@@ -22,7 +22,7 @@ public class CWCarDefiner : MonoBehaviour
       
       PlayerPrefs.SetString("ActiveScene", SceneManager.GetActiveScene().name);
       PlayerPrefs.Save();
-      carNo = 2;
+      carNo = 0;
     /*if (PlayerPrefs.HasKey("ActiveCar"))
       {
           carNo = PlayerPrefs.GetInt("ActiveCar");

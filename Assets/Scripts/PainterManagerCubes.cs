@@ -12,10 +12,14 @@ public class PainterManagerCubes : MonoBehaviour
     [SerializeField] private float foamRadius;
     [SerializeField] private float waterRadius;
     [SerializeField] private float dryerRadius;
+
+    [SerializeField] private AudioSource source;
+    [SerializeField] private AudioClip tickClip;
+    [SerializeField] private AudioClip finishClip;
     
-    private List <GameObject> foamCubes;
     private List <GameObject>waterCubes;
     private List <GameObject> dryerCubes;
+    private List <GameObject> foamCubes;
 
     private P3dPaintableTexture [] mainPaintableTexture;
     private GameObject carToWorkOn;
@@ -45,6 +49,7 @@ public class PainterManagerCubes : MonoBehaviour
 
     private void Awake()
     {
+        
     }
 
 
@@ -119,6 +124,7 @@ public class PainterManagerCubes : MonoBehaviour
 
     public void OnFoamFinish()
     {
+        source.PlayOneShot(tickClip);
         isFoamFinished = true;
         WaterActive();
     }
@@ -145,6 +151,7 @@ public class PainterManagerCubes : MonoBehaviour
     { 
         DryerActive();
         isWaterFinished = true;
+        source.PlayOneShot(tickClip);
     }
     
     public void DryerActive()
@@ -158,6 +165,8 @@ public class PainterManagerCubes : MonoBehaviour
             foreach (GameObject cube in dryerCubes)
             { cube.SetActive(true); }
         }
+        
+        source.PlayOneShot(finishClip);
     }
     
     public void OnDryerFinish()
@@ -194,8 +203,7 @@ public class PainterManagerCubes : MonoBehaviour
         {   Debug.Log("Dryer Finished");
             OnDryerFinish();
         }
-        
-      
+
 
         if (isFoamFinished && isWaterFinished && isDryerFinished && !isCarFinished)
         {
