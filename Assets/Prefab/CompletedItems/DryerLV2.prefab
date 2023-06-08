@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 1311339254981765321}
   - component: {fileID: 1530236083406932027}
   - component: {fileID: 3532261568659265626}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: DryerLV2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ Transform:
   m_GameObject: {fileID: 1311339254981765320}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.831, z: -0.766}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.7917, y: 0.7917, z: 0.7917}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2327427047902670401}
@@ -186,10 +186,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _grabbable: {fileID: 1311339254981765323}
-  rayDistance: 0.2
+  rayDistance: 0.3
   hitPainter: {fileID: 7139691869549215460}
   _layerMask: 8
   rayDirection: {x: 0, y: -1, z: 0}
+  isDryerSponge: 0
   hitNumber: 0
 --- !u!114 &3532261568659265626
 MonoBehaviour:
@@ -232,7 +233,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7139691869549215460}
   m_LocalRotation: {x: -0.015400772, y: 0.70693904, z: -0.015400772, w: -0.70693904}
-  m_LocalPosition: {x: -4.1799994, y: 0.34600008, z: 1.9397166}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.07307431, y: 0.07307431, z: 0.073074296}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -340,7 +341,7 @@ MonoBehaviour:
   color: {r: 1, g: 1, b: 1, a: 1}
   opacity: 1
   angle: 0
-  scale: {x: 1, y: 1, z: 1}
+  scale: {x: 0.44, y: 0.45, z: 0.31}
   radius: 0.4
   hardness: 1
   tileTexture: {fileID: 0}

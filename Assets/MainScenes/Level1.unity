@@ -2022,7 +2022,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: d084d58cdf6177a4e935825e8053d85a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -18070,11 +18070,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1849468785386193997, guid: 46a6e815174a2c74fb2cd57ac95dc8df, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.906
+      value: 9.831
       objectReference: {fileID: 0}
     - target: {fileID: 1849468785386193997, guid: 46a6e815174a2c74fb2cd57ac95dc8df, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.010000001
+      value: -0.018
       objectReference: {fileID: 0}
     - target: {fileID: 1849468785386193997, guid: 46a6e815174a2c74fb2cd57ac95dc8df, type: 3}
       propertyPath: m_LocalPosition.z
@@ -18698,7 +18698,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3676264694616632039, guid: ac5c8065af787bb4291ff57e812386b3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4057576067834015837, guid: ac5c8065af787bb4291ff57e812386b3, type: 3}
       propertyPath: m_RootOrder
@@ -18706,11 +18706,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4057576067834015837, guid: ac5c8065af787bb4291ff57e812386b3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.529
+      value: 9.493
       objectReference: {fileID: 0}
     - target: {fileID: 4057576067834015837, guid: ac5c8065af787bb4291ff57e812386b3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.01
+      value: 0.086
       objectReference: {fileID: 0}
     - target: {fileID: 4057576067834015837, guid: ac5c8065af787bb4291ff57e812386b3, type: 3}
       propertyPath: m_LocalPosition.z
