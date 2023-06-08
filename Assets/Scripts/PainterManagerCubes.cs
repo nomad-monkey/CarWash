@@ -167,12 +167,13 @@ public class PainterManagerCubes : MonoBehaviour
             { cube.SetActive(true); }
         }
         
-        source.PlayOneShot(finishClip);
+      
     }
     
     public void OnDryerFinish()
     {
         isDryerFinished = true;
+        source.PlayOneShot(finishClip);
 
     }
 
