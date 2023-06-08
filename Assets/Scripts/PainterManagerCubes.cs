@@ -72,7 +72,10 @@ public class PainterManagerCubes : MonoBehaviour
         isWaterFinished = false;
         isDryerFinished = false;
         isCarFinished = false;
-       
+
+        foamPainter.hitNumber = 0;
+        dryerPainter.hitNumber = 0;
+        waterPainter.hitNumber = 0;
         carToWorkOn = carDefiner.currentCar;
 
         carManager= carToWorkOn.GetComponent<CWCarManager>();

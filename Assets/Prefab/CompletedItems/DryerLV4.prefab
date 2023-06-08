@@ -746,9 +746,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _grabbable: {fileID: 8958770850109461908}
   rayDistance: 3
-  hitPainter: {fileID: 0}
-  _layerMask: 0
-  rayDirection: {x: 0, y: 0, z: 0}
+  hitPainter: {fileID: 2626041518990993439}
+  _layerMask: 8
+  rayDirection: {x: 0, y: 0, z: 1}
   hitNumber: 0
 --- !u!1001 &8958770848484649545
 PrefabInstance:
