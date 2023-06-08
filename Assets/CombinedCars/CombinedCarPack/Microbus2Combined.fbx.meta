@@ -3,7 +3,12 @@ guid: 085546e7c769fef419d2f2a1c5eae3cc
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PixelColors
+    second: {fileID: 2100000, guid: 993fe6c09f4f442438c2edb216fef597, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

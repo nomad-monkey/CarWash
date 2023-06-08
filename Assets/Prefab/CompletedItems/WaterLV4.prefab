@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 174899723}
   m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 0.727, y: 0.015, z: -0.286}
+  m_LocalPosition: {x: 0.566, y: 0.01, z: -0.286}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -285,7 +285,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 0.35
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -10760,6 +10760,7 @@ MonoBehaviour:
   hitPainter: {fileID: 5826007448593490827}
   _layerMask: 7
   rayDirection: {x: 1, y: 0, z: 0}
+  isDryerSponge: 0
   hitNumber: 0
 --- !u!1001 &7097940018589138428
 PrefabInstance:
