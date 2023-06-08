@@ -10104,7 +10104,7 @@ GameObject:
   - component: {fileID: 2705468489111316369}
   - component: {fileID: 1906814988736359431}
   m_Layer: 14
-  m_Name: WaterLV4Sphere (2)
+  m_Name: WaterLV4Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10226,7 +10226,7 @@ MonoBehaviour:
   color: {r: 1, g: 1, b: 1, a: 1}
   opacity: 1
   angle: 0
-  scale: {x: 0.42, y: 0.2, z: 0.68}
+  scale: {x: 0.6, y: 0.39, z: 0.77}
   radius: 0.4
   hardness: 1
   tileTexture: {fileID: 0}
@@ -10439,6 +10439,7 @@ GameObject:
   - component: {fileID: 7097940018983139719}
   - component: {fileID: 7097940018983139717}
   - component: {fileID: 820639409}
+  - component: {fileID: 819476194}
   m_Layer: 0
   m_Name: WaterLV4
   m_TagString: Untagged
@@ -10742,6 +10743,24 @@ MonoBehaviour:
   onSnapZoneExit:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &819476194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7097940018983139713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68580eca541a3354a9d7d03f45337fc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _grabbable: {fileID: 7097940018983139718}
+  rayDistance: 3
+  hitPainter: {fileID: 5826007448593490827}
+  _layerMask: 7
+  rayDirection: {x: 1, y: 0, z: 0}
+  hitNumber: 0
 --- !u!1001 &7097940018589138428
 PrefabInstance:
   m_ObjectHideFlags: 0
