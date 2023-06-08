@@ -4201,6 +4201,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SportsCar5Combined
       objectReference: {fileID: 0}
+    - target: {fileID: 2483412899385181836, guid: 9c7cfa7a65ddc2a4787a1b728d10c316, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2971542819393133622, guid: 9c7cfa7a65ddc2a4787a1b728d10c316, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -19181,6 +19185,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SportsCar1Combined
       objectReference: {fileID: 0}
+    - target: {fileID: 8113070222290861638, guid: 8a81d84376ef96c47823c5e3e6221e1b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8925213952376464636, guid: 8a81d84376ef96c47823c5e3e6221e1b, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -19291,6 +19299,10 @@ PrefabInstance:
     - target: {fileID: 7963477879918346097, guid: c937020e96ee1f4489ac4de6bf8d590a, type: 3}
       propertyPath: m_Name
       value: SportsCar2Combined
+      objectReference: {fileID: 0}
+    - target: {fileID: 7963477879918346097, guid: c937020e96ee1f4489ac4de6bf8d590a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8467621073315765924, guid: c937020e96ee1f4489ac4de6bf8d590a, type: 3}
       propertyPath: m_Materials.Array.size
@@ -22576,6 +22588,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SportsCar4Combined
       objectReference: {fileID: 0}
+    - target: {fileID: 6534329224095562332, guid: 1e4882c82c37efc40b7beaaff3e26687, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e4882c82c37efc40b7beaaff3e26687, type: 3}
 --- !u!4 &1692279439 stripped
@@ -23860,6 +23876,10 @@ PrefabInstance:
     - target: {fileID: 2117887446269179703, guid: 58788f28b795d1c499ba138ed6f82fbf, type: 3}
       propertyPath: m_Name
       value: SportsCar3Combined
+      objectReference: {fileID: 0}
+    - target: {fileID: 2117887446269179703, guid: 58788f28b795d1c499ba138ed6f82fbf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58788f28b795d1c499ba138ed6f82fbf, type: 3}
