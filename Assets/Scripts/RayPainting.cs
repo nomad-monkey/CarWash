@@ -19,6 +19,10 @@ public class RayPainting : MonoBehaviour
 
     [SerializeField] private bool isDryerSponge;
     
+    
+    [SerializeField] Sprite _sprite;
+   
+    
     public int hitNumber;
     private void Update()
     {
@@ -124,6 +128,12 @@ public class RayPainting : MonoBehaviour
                     hitPainter.SetActive(false);
                 
                 }
+
+
+
+               
+
+
 
             }
 
