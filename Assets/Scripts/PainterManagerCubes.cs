@@ -174,6 +174,7 @@ public class PainterManagerCubes : MonoBehaviour
     {
         isDryerFinished = true;
         source.PlayOneShot(finishClip);
+        carToWorkOn.GetComponent<MeshRenderer>().materials[1].SetTexture("_MainTex", transparentTexture);
 
     }
 
@@ -209,7 +210,7 @@ public class PainterManagerCubes : MonoBehaviour
         if ( dryerPainter.hitNumber>(dryerMax/2) && !isDryerFinished && isWaterFinished && isFoamFinished && isDryerSponge)
         {   Debug.Log("Dryer Finished");
 
-            carToWorkOn.GetComponent<MeshRenderer>().materials[1].SetTexture("_MainTex", transparentTexture);
+            
             OnDryerFinish();
         }
 
