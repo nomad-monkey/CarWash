@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PercentageText : MonoBehaviour
@@ -78,21 +79,27 @@ public class PercentageText : MonoBehaviour
       finishLevelUI.SetActive(true);
      
       
-      if (painterManager.carDefiner.carNo == painterManager.carDefiner.cars.Length-1)
+      if (painterManager.carDefiner.carNo == painterManager.carDefiner.cars.Length-1 && SceneManager.GetActiveScene().name != "Level5")
       {
          nextCarButton.SetActive(false);
          nextChapterButton.SetActive(true);
          CompleteText.text = ("Level Complete");
 
       }
-      else
+      else if (painterManager.carDefiner.carNo < painterManager.carDefiner.cars.Length-1 && SceneManager.GetActiveScene().name != "Level5")
       {
          nextCarButton.SetActive(true);
          nextChapterButton.SetActive(false);
          CompleteText.text = ("Car Complete");
 
       }
-
+      else if ( painterManager.carDefiner.carNo == painterManager.carDefiner.cars.Length-1 && SceneManager.GetActiveScene().name == "Level5")
+      {
+         nextCarButton.SetActive(false);
+         nextChapterButton.SetActive(true);
+         CompleteText.text = ("Congratulatıons!! You have successfully completed all the levels. Waıt for the upcomıng levels.");
+         CompleteText.fontSize = 16f;
+      }
 
       nextCarImage.sprite = nextCarSprites[painterManager.carDefiner.carNo];
       CarPercentage.text = painterManager.carDefiner.carNo+1+ "/" + painterManager.carDefiner.cars.Length;
