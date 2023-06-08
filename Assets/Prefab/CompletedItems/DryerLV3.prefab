@@ -9877,7 +9877,6 @@ GameObject:
   - component: {fileID: 666943229198138333}
   - component: {fileID: 666943229198138335}
   - component: {fileID: 8908348057783346426}
-  - component: {fileID: 2687780820775796469}
   m_Layer: 0
   m_Name: DryerLV3
   m_TagString: Untagged
@@ -9904,6 +9903,7 @@ Transform:
   - {fileID: 283711032}
   - {fileID: 1458605041}
   - {fileID: 6689655256932202042}
+  - {fileID: 1188677011709837228}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10181,24 +10181,6 @@ MonoBehaviour:
   onSnapZoneExit:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &2687780820775796469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 666943229198138323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68580eca541a3354a9d7d03f45337fc8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _grabbable: {fileID: 666943229198138332}
-  rayDistance: 3
-  hitPainter: {fileID: 6905707820005185554}
-  _layerMask: 8
-  rayDirection: {x: 0, y: 0, z: 1}
-  hitNumber: 0
 --- !u!1 &3691576881972041024
 GameObject:
   m_ObjectHideFlags: 0
@@ -10347,6 +10329,58 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1500
   m_PresetInfoIsWorld: 1
+--- !u!1 &4249748581326011270
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1188677011709837228}
+  - component: {fileID: 8111767391344845193}
+  m_Layer: 0
+  m_Name: RayPainter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1188677011709837228
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4249748581326011270}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.2163}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 666943229198138322}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8111767391344845193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4249748581326011270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68580eca541a3354a9d7d03f45337fc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _grabbable: {fileID: 666943229198138332}
+  rayDistance: 1.5
+  hitPainter: {fileID: 6905707820005185554}
+  _layerMask: 8
+  rayDirection: {x: 0, y: 0, z: 1}
+  isDryerSponge: 0
+  _sprite: {fileID: 0}
+  hitNumber: 0
 --- !u!1 &6905707820005185554
 GameObject:
   m_ObjectHideFlags: 0

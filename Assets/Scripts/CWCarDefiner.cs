@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Services.Analytics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -31,10 +32,8 @@ public class CWCarDefiner : MonoBehaviour
       {
           carNo = 0;
       }
-     
-      
 
-      foreach (GameObject car in cars)
+     foreach (GameObject car in cars)
       {
           car.SetActive(false);
       }
@@ -42,7 +41,7 @@ public class CWCarDefiner : MonoBehaviour
       cars[carNo].SetActive(true);
       currentCar = cars[carNo];
       
-      
+      CustomAnalyticsEvents.NewCarEvent(SceneManager.GetActiveScene().name,carNo);
   }
 
    public void NewCar()
@@ -66,7 +65,7 @@ public class CWCarDefiner : MonoBehaviour
            
        }
        
-       
+       CustomAnalyticsEvents.NewCarEvent(SceneManager.GetActiveScene().name,carNo);
 
    }
 
