@@ -10,11 +10,11 @@ public class CustomAnalyticsEvents : MonoBehaviour
 
 
 
-    public static void NewCarEvent (string sceneName, int carNo)
+    public static void NewCarEvent (string sceneName, string carNo)
     {
         var parameters = new Dictionary<string, object>
         {
-            { "SceneName " + sceneName, "CarNo " + carNo }
+            { sceneName,  carNo }
         };
 
         AnalyticsService.Instance.CustomData("NewCarEvent", parameters);

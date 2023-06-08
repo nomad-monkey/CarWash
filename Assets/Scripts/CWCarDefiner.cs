@@ -41,7 +41,7 @@ public class CWCarDefiner : MonoBehaviour
       cars[carNo].SetActive(true);
       currentCar = cars[carNo];
       
-      CustomAnalyticsEvents.NewCarEvent(SceneManager.GetActiveScene().name,carNo);
+      CustomAnalyticsEvents.NewCarEvent(SceneManager.GetActiveScene().name,carNo.ToString());
   }
 
    public void NewCar()
@@ -65,7 +65,7 @@ public class CWCarDefiner : MonoBehaviour
            
        }
        
-       CustomAnalyticsEvents.NewCarEvent(SceneManager.GetActiveScene().name,carNo);
+       CustomAnalyticsEvents.NewCarEvent(SceneManager.GetActiveScene().name,carNo.ToString());
 
    }
 
