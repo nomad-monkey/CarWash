@@ -11819,6 +11819,49 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4506960780921764, guid: b6556d56d90cca346b2ec50410073425, type: 3}
   m_PrefabInstance: {fileID: 1336646676}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1345472174
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1345472176}
+  - component: {fileID: 1345472175}
+  m_Layer: 0
+  m_Name: Occlusion Area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!192 &1345472175
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345472174}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_IsViewVolume: 1
+--- !u!4 &1345472176
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345472174}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 24.381163, y: 24.381163, z: 24.381163}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1357692656
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12565,9 +12608,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carDefiner: {fileID: 1424016271}
-  foamRadius: 0.4
-  waterRadius: 0.4
-  dryerRadius: 0.4
+  foamRadius: 0.5
+  waterRadius: 0.5
+  dryerRadius: 0.5
   source: {fileID: 1140477210}
   tickClip: {fileID: 8300000, guid: 7e850f7138fce574796ec0e8b9c4a20e, type: 3}
   finishClip: {fileID: 8300000, guid: fb543002c5d450e4db380d05f03e6519, type: 3}

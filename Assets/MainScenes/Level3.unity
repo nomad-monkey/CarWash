@@ -8,8 +8,8 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: 35ec67d1a67e3064b8adf3592a6f4989
+  m_OcclusionCullingData: {fileID: 36300000, guid: ef6b62f0aac27dc48ac8a2031cf7bea4, type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -17783,6 +17783,7 @@ Transform:
   - {fileID: 1895769367}
   - {fileID: 1203073469}
   - {fileID: 8045336635225880456}
+  - {fileID: 1973063944}
   - {fileID: 1737300961}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -19105,6 +19106,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WaterLV3
       objectReference: {fileID: 0}
+    - target: {fileID: 7753492767995919424, guid: bbbf50f719800014981a1c5446afd30a, type: 3}
+      propertyPath: scale.y
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbbf50f719800014981a1c5446afd30a, type: 3}
 --- !u!4 &1203073469 stripped
@@ -19775,6 +19780,49 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5056871621218562655, guid: 718b52b0c8fc9e24aa23f89f481e9ceb, type: 3}
   m_PrefabInstance: {fileID: 901818680}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1284409063
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1284409065}
+  - component: {fileID: 1284409064}
+  m_Layer: 0
+  m_Name: Occlusion Area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!192 &1284409064
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284409063}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_IsViewVolume: 1
+--- !u!4 &1284409065
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284409063}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 31.403292, y: 31.403292, z: 31.403292}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1286251728
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21133,7 +21181,7 @@ MonoBehaviour:
   nextCarSprites:
   - {fileID: 21300000, guid: 8d118e5a5c0575b47affd7c57f5112f2, type: 3}
   - {fileID: 21300000, guid: 1a0f6d46d92c75c47b4e9ec92f2e2f52, type: 3}
-  - {fileID: 21300000, guid: 6e958a13678193443aca568ed4575483, type: 3}
+  - {fileID: 21300000, guid: d64e3e026f8e1ab44b3214896a8bc099, type: 3}
   - {fileID: 21300000, guid: 0a8d77cf6382c2a44882991afdbb5a0e, type: 3}
   - {fileID: 21300000, guid: cd5e2ed0ca8090d46b34a2a46fbef155, type: 3}
   - {fileID: 21300000, guid: 5fa665f4294f85c48b2f61101235838e, type: 3}
@@ -21155,9 +21203,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carDefiner: {fileID: 1424016271}
-  foamRadius: 0.4
-  waterRadius: 0.4
-  dryerRadius: 0.4
+  foamRadius: 0.6
+  waterRadius: 0.6
+  dryerRadius: 0.6
   source: {fileID: 1202003855}
   tickClip: {fileID: 8300000, guid: fb543002c5d450e4db380d05f03e6519, type: 3}
   finishClip: {fileID: 8300000, guid: 7e850f7138fce574796ec0e8b9c4a20e, type: 3}
@@ -24082,9 +24130,8 @@ Transform:
   m_Children:
   - {fileID: 812887874}
   - {fileID: 1186890922}
-  - {fileID: 1973063944}
   m_Father: {fileID: 1080702724}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 180, y: 180, z: 90}
 --- !u!1 &1738585821
 GameObject:
@@ -26426,15 +26473,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1973063938}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.007999913, y: -0.0993004, z: 0.4817047}
-  m_LocalScale: {x: 1.5833998, y: 1.5833998, z: 1.5833997}
+  m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
+  m_LocalPosition: {x: -5.965, y: 2.924, z: 9.000705}
+  m_LocalScale: {x: 1.5834, y: 1.5834, z: 1.5834001}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1916925999}
   - {fileID: 62824616}
-  m_Father: {fileID: 1737300961}
-  m_RootOrder: 2
+  m_Father: {fileID: 1080702724}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 90, y: 180, z: 90}
 --- !u!1001 &1978918523
 PrefabInstance:

@@ -20,7 +20,7 @@ public class RayPainting : MonoBehaviour
     [SerializeField] private bool isDryerSponge;
     
     public int hitNumber;
-    private void FixedUpdate()
+    private void Update()
     {
 
         PaintWithTrigger();
