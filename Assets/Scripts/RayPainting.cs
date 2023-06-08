@@ -16,6 +16,9 @@ public class RayPainting : MonoBehaviour
     [SerializeField] private int _layerMask;
 
     [SerializeField] private Vector3 rayDirection;
+
+    [SerializeField] private bool isDryerSponge;
+    
     public int hitNumber;
     private void FixedUpdate()
     {
@@ -26,50 +29,104 @@ public class RayPainting : MonoBehaviour
 
     public void PaintWithTrigger()
         {
-
-            if (_grabbable.BeingHeld && InputBridge.Instance.RightTrigger>0.1f)
+            if (isDryerSponge)
             {
-                Debug.Log("hold");
+                if (_grabbable.BeingHeld)
+                {
+                    Debug.Log("hold");
                
 		
-                RaycastHit hitInfo;
+                    RaycastHit hitInfo;
 
 
-                if(Physics.Raycast(transform.position, transform.TransformDirection(rayDirection), out hitInfo, rayDistance))
-                {
-                    Debug.Log("hit");
-                    hitPainter.SetActive(true);
-                    hitPainter.transform.position = hitInfo.point;
-
-                    var paintObject = hitInfo.transform.GetComponent<P3dPaintable>();
-                   
-                    if(paintObject != null)
+                    if(Physics.Raycast(transform.position, transform.TransformDirection(rayDirection), out hitInfo, rayDistance))
                     {
+                        Debug.Log("hit");
+                        hitPainter.SetActive(true);
+                        hitPainter.transform.position = hitInfo.point;
+
+                        var paintObject = hitInfo.transform.GetComponent<P3dPaintable>();
+                   
+                        if(paintObject != null)
+                        {
                         
                        
-                    }
+                        }
 
-                    if (hitInfo.transform.gameObject.layer == _layerMask)
-                    {
-                        Debug.Log("HitCube");
-                        GameObject objectToDestroy = hitInfo.transform.gameObject;
-                        objectToDestroy.layer = 0;
-                        Destroy(objectToDestroy.GetComponent(typeof(Collider)));
-                        Destroy(objectToDestroy);
+                        if (hitInfo.transform.gameObject.layer == _layerMask)
+                        {
+                            Debug.Log("HitCube");
+                            GameObject objectToDestroy = hitInfo.transform.gameObject;
+                            objectToDestroy.layer = 0;
+                            Destroy(objectToDestroy.GetComponent(typeof(Collider)));
+                            Destroy(objectToDestroy);
                         
-                        hitNumber++;
-                    }
+                            hitNumber++;
+                        }
 					
                     
+                    }
+			
+			
                 }
-			
-			
-            }
-            else
-            {
+                else
+                {
                
-                hitPainter.SetActive(false);
+                    hitPainter.SetActive(false);
+                
+                }
                 
             }
+
+            else
+            {
+                if (_grabbable.BeingHeld && InputBridge.Instance.RightTrigger>0.1f)
+                {
+                    Debug.Log("hold");
+               
+		
+                    RaycastHit hitInfo;
+
+
+                    if(Physics.Raycast(transform.position, transform.TransformDirection(rayDirection), out hitInfo, rayDistance))
+                    {
+                        Debug.Log("hit");
+                        hitPainter.SetActive(true);
+                        hitPainter.transform.position = hitInfo.point;
+
+                        var paintObject = hitInfo.transform.GetComponent<P3dPaintable>();
+                   
+                        if(paintObject != null)
+                        {
+                        
+                       
+                        }
+
+                        if (hitInfo.transform.gameObject.layer == _layerMask)
+                        {
+                            Debug.Log("HitCube");
+                            GameObject objectToDestroy = hitInfo.transform.gameObject;
+                            objectToDestroy.layer = 0;
+                            Destroy(objectToDestroy.GetComponent(typeof(Collider)));
+                            Destroy(objectToDestroy);
+                        
+                            hitNumber++;
+                        }
+					
+                    
+                    }
+			
+			
+                }
+                else
+                {
+               
+                    hitPainter.SetActive(false);
+                
+                }
+
+            }
+
+            
         }
 }

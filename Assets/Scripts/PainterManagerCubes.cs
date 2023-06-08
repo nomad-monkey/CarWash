@@ -36,12 +36,13 @@ public class PainterManagerCubes : MonoBehaviour
     public  int waterMax;
     public int dryerMax;
 
-
+    [SerializeField] private bool isDryerSponge;
+    
     [SerializeField] private P3dPaintSphere dryerSphere;
     [SerializeField] private P3dPaintSphere waterSphere;
     [SerializeField] private P3dPaintSphere foamSphere;
-   
-   
+
+    [SerializeField] private Texture transparentTexture;
     
     [SerializeField] public RayPainting foamPainter;
     [SerializeField] public RayPainting waterPainter;
@@ -199,8 +200,15 @@ public class PainterManagerCubes : MonoBehaviour
             OnWaterFinish();
         }
         
-        if ( dryerMax==dryerPainter.hitNumber && !isDryerFinished && isWaterFinished && isFoamFinished)
+        if ( dryerMax==dryerPainter.hitNumber && !isDryerFinished && isWaterFinished && isFoamFinished && !isDryerSponge)
         {   Debug.Log("Dryer Finished");
+            OnDryerFinish();
+        }
+        
+        if ( dryerPainter.hitNumber>(dryerMax/2) && !isDryerFinished && isWaterFinished && isFoamFinished && isDryerSponge)
+        {   Debug.Log("Dryer Finished");
+
+            carToWorkOn.GetComponent<MeshRenderer>().materials[1].SetTexture("_MainTex", transparentTexture);
             OnDryerFinish();
         }
 
