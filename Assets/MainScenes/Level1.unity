@@ -4609,7 +4609,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2767026639141312820, guid: e6924550eb81121459773b62920dff1d, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2767026639141312820, guid: e6924550eb81121459773b62920dff1d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7995,7 +7995,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4376820562433834320, guid: 231d663da7ad5db46b76156b74170ae3, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4376820562433834320, guid: 231d663da7ad5db46b76156b74170ae3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26307,6 +26307,14 @@ PrefabInstance:
     - target: {fileID: 4057576067834015837, guid: ac5c8065af787bb4291ff57e812386b3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4595323717522954163, guid: ac5c8065af787bb4291ff57e812386b3, type: 3}
+      propertyPath: width
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 4595323717522954163, guid: ac5c8065af787bb4291ff57e812386b3, type: 3}
+      propertyPath: height
+      value: 1024
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac5c8065af787bb4291ff57e812386b3, type: 3}
