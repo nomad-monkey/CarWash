@@ -18127,9 +18127,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 449615486}
     m_Modifications:
+    - target: {fileID: 712007253326167842, guid: 46a6e815174a2c74fb2cd57ac95dc8df, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 993fe6c09f4f442438c2edb216fef597, type: 2}
     - target: {fileID: 1360494607429689079, guid: 46a6e815174a2c74fb2cd57ac95dc8df, type: 3}
       propertyPath: m_Name
-      value: Sedan4
+      value: Sedan4Combined
       objectReference: {fileID: 0}
     - target: {fileID: 1360494607429689079, guid: 46a6e815174a2c74fb2cd57ac95dc8df, type: 3}
       propertyPath: m_IsActive
@@ -18187,6 +18191,10 @@ PrefabInstance:
       propertyPath: height
       value: 1024
       objectReference: {fileID: 0}
+    - target: {fileID: 3316190407222692840, guid: 46a6e815174a2c74fb2cd57ac95dc8df, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 7465087841875176693, guid: 5592b71ab4302ae42928322bef01c918, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46a6e815174a2c74fb2cd57ac95dc8df, type: 3}
 --- !u!4 &245220982819951806 stripped
@@ -18274,6 +18282,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8622057878822175102, guid: 4d8fdb65f75e52f41a672ed6c9f614fb, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 993fe6c09f4f442438c2edb216fef597, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d8fdb65f75e52f41a672ed6c9f614fb, type: 3}
 --- !u!4 &618925606908969450 stripped
@@ -18579,6 +18591,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8270686851580720368, guid: 1af3dd7b6b1ad6542867779497a1459e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 993fe6c09f4f442438c2edb216fef597, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1af3dd7b6b1ad6542867779497a1459e, type: 3}
 --- !u!4 &2720478271248440855 stripped
@@ -18749,6 +18765,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3490639219033972566, guid: 06b9fd5a39afc2a49a03422985ea720d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 993fe6c09f4f442438c2edb216fef597, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06b9fd5a39afc2a49a03422985ea720d, type: 3}
 --- !u!4 &4724070014170020921 stripped
@@ -18768,6 +18788,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 449615486}
     m_Modifications:
+    - target: {fileID: 2883512344380476210, guid: ac5c8065af787bb4291ff57e812386b3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 993fe6c09f4f442438c2edb216fef597, type: 2}
     - target: {fileID: 3676264694616632039, guid: ac5c8065af787bb4291ff57e812386b3, type: 3}
       propertyPath: m_Name
       value: Sedan3Combined
