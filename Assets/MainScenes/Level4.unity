@@ -1141,7 +1141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4706271483435845260, guid: 33ccd04acc459e744a26714257566814, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5340099647728704566, guid: 33ccd04acc459e744a26714257566814, type: 3}
       propertyPath: m_RootOrder
@@ -17087,6 +17087,134 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4903703118725546, guid: 263e2ed3083cfca4dbbbec0c06cd4811, type: 3}
   m_PrefabInstance: {fileID: 968258968}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &987971274
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 987971275}
+  - component: {fileID: 987971276}
+  m_Layer: 13
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &987971275
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987971274}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1424016270}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &987971276
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987971274}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &991706844
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20563,7 +20691,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4864405609078238441, guid: 07d835cfe807b1c4b9d396de6885ae40, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5245013015752275539, guid: 07d835cfe807b1c4b9d396de6885ae40, type: 3}
       propertyPath: m_RootOrder
@@ -21386,7 +21514,8 @@ Transform:
   m_LocalPosition: {x: 6.734988, y: -1.6303337, z: -8.007905}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 987971275}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -21459,6 +21588,9 @@ MonoBehaviour:
   foamRadius: 0.4
   waterRadius: 0.4
   dryerRadius: 0.4
+  source: {fileID: 987971276}
+  tickClip: {fileID: 8300000, guid: 7e850f7138fce574796ec0e8b9c4a20e, type: 3}
+  finishClip: {fileID: 8300000, guid: fb543002c5d450e4db380d05f03e6519, type: 3}
   isFoamFinished: 0
   isWaterFinished: 0
   isDryerFinished: 0
@@ -21466,9 +21598,11 @@ MonoBehaviour:
   foamMax: 0
   waterMax: 0
   dryerMax: 0
+  isDryerSponge: 0
   dryerSphere: {fileID: 184654598}
   waterSphere: {fileID: 819476193}
   foamSphere: {fileID: 1965599254}
+  transparentTexture: {fileID: 2800000, guid: 2519327e9baf81b4395425c65e688f2a, type: 3}
   foamPainter: {fileID: 1965599253}
   waterPainter: {fileID: 819476192}
   dryerPainter: {fileID: 184654597}
@@ -22052,7 +22186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3403228283193473358, guid: b6c477b2eb22ebf49a9fa5fecc7ef492, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3763406645525256347, guid: b6c477b2eb22ebf49a9fa5fecc7ef492, type: 3}
       propertyPath: m_Materials.Array.size
@@ -24724,7 +24858,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1528142684017086649, guid: ea8fadf16a97e1c43a2563d10f63bb6a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1870230233304811020, guid: ea8fadf16a97e1c43a2563d10f63bb6a, type: 3}
       propertyPath: m_Layer
@@ -28221,7 +28355,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 306608274914082159, guid: f877f46d334e10d44b564650f599a258, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1083848214467225557, guid: f877f46d334e10d44b564650f599a258, type: 3}
       propertyPath: m_RootOrder

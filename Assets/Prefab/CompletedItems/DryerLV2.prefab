@@ -62,7 +62,7 @@ Transform:
   m_GameObject: {fileID: 1311339254981765320}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.831, z: -0.766}
-  m_LocalScale: {x: 0.7917, y: 0.7917, z: 0.7917}
+  m_LocalScale: {x: 0.60225, y: 0.60225, z: 0.60225}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2327427047902670401}
@@ -171,8 +171,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.2119596, y: 0.067312986, z: 0.31160492}
-  m_Center: {x: 0.00000011920929, y: 0.000000014901161, z: 0}
+  m_Size: {x: 0.1150605, y: 0.05411528, z: 0.11049005}
+  m_Center: {x: -0.004173946, y: -0.00070501235, z: -0.017749961}
 --- !u!114 &1530236083406932027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,11 +186,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _grabbable: {fileID: 1311339254981765323}
-  rayDistance: 0.3
+  rayDistance: 0.2
   hitPainter: {fileID: 7139691869549215460}
   _layerMask: 8
   rayDirection: {x: 0, y: -1, z: 0}
-  isDryerSponge: 0
+  isDryerSponge: 1
   hitNumber: 0
 --- !u!114 &3532261568659265626
 MonoBehaviour:
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bf056c6a3c5d3844912dc06d0a30eaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Scale: 0.5
+  Scale: 1
 --- !u!1 &7139691869549215460
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,7 +341,7 @@ MonoBehaviour:
   color: {r: 1, g: 1, b: 1, a: 1}
   opacity: 1
   angle: 0
-  scale: {x: 0.44, y: 0.45, z: 0.31}
+  scale: {x: 0.3, y: 0.3, z: 0.3}
   radius: 0.4
   hardness: 1
   tileTexture: {fileID: 0}
@@ -622,6 +622,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 75180b92e61e3fc4f885402ff63099fb, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 4909653635672104895, guid: 82930c40ace5689479faf67e398a310b, type: 3}
     - target: {fileID: 919132149155446097, guid: 75180b92e61e3fc4f885402ff63099fb, type: 3}
       propertyPath: m_Name
       value: DryerLV2
